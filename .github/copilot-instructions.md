@@ -3,11 +3,13 @@
 # Copilot Instructions for Miisol Ltd Website
 
 ## Project Overview
+
 This is a modern, responsive website for Miisol Ltd, an AI technology consulting company. The website showcases AI solutions, consulting services, and agent discovery platforms.
 
 ## Code Style Guidelines
 
 ### HTML
+
 - Use semantic HTML5 elements
 - Maintain proper document structure
 - Include accessibility attributes (alt, aria-labels, etc.)
@@ -15,6 +17,7 @@ This is a modern, responsive website for Miisol Ltd, an AI technology consulting
 - Ensure proper heading hierarchy (h1, h2, h3, etc.)
 
 ### CSS
+
 - Use CSS custom properties (variables) defined in :root
 - Follow mobile-first responsive design principles
 - Use CSS Grid and Flexbox for layouts
@@ -23,6 +26,7 @@ This is a modern, responsive website for Miisol Ltd, an AI technology consulting
 - Group related styles together with comments
 
 ### JavaScript
+
 - Use modern ES6+ syntax
 - Implement proper error handling
 - Add comments for complex functionality
@@ -31,6 +35,7 @@ This is a modern, responsive website for Miisol Ltd, an AI technology consulting
 - Implement accessibility features (keyboard navigation, ARIA)
 
 ## Design Principles
+
 - Mobile-first responsive design
 - Progressive enhancement
 - Accessibility (WCAG 2.1 AA compliance)
@@ -39,6 +44,7 @@ This is a modern, responsive website for Miisol Ltd, an AI technology consulting
 - Consistent color scheme and typography
 
 ## Technology Stack
+
 - HTML5 for semantic structure
 - CSS3 with modern features (Grid, Flexbox, Custom Properties)
 - Vanilla JavaScript (no frameworks)
@@ -46,6 +52,7 @@ This is a modern, responsive website for Miisol Ltd, an AI technology consulting
 - Google Fonts for typography
 
 ## Performance Guidelines
+
 - Optimize images and use appropriate formats
 - Minimize HTTP requests
 - Use efficient CSS selectors
@@ -53,6 +60,7 @@ This is a modern, responsive website for Miisol Ltd, an AI technology consulting
 - Compress and minify assets for production
 
 ## Accessibility Requirements
+
 - Proper heading structure
 - Alt text for images
 - Keyboard navigation support
@@ -61,9 +69,11 @@ This is a modern, responsive website for Miisol Ltd, an AI technology consulting
 - Focus indicators
 
 ## Browser Support
+
 Target modern browsers (Chrome 70+, Firefox 65+, Safari 12+, Edge 79+)
 
 ## When making changes:
+
 1. Test responsive design on multiple screen sizes
 2. Validate HTML and CSS
 3. Check accessibility with screen readers
