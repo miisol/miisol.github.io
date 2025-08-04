@@ -1,8 +1,8 @@
 # GitHub Pages Configuration
 
 # Enable GitHub Pages
-url: "https://yourusername.github.io"
-baseurl: "/miisol-github"
+url: "https://miisol.github.io"
+baseurl: ""
 
 # Site settings
 title: "Miisol Ltd - AI Technology Solutions"

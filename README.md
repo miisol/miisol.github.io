@@ -15,7 +15,7 @@ A modern, responsive website for Miisol Ltd, showcasing AI technology solutions,
 
 ## 🚀 Live Demo
 
-Visit the live website: [https://yourusername.github.io/miisol-github](https://yourusername.github.io/miisol-github)
+Visit the live website: [https://miisol.github.io](https://miisol.github.io)
 
 ## 📁 Project Structure
 
