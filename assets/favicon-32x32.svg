@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="smallFaviconDotsGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2d388a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00aeef;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- White background rounded square with subtle border -->
+  <rect width="32" height="32" rx="6" fill="white" stroke="#e5e7eb" stroke-width="0.5" />
+  
+  <!-- Simplified square dots pattern in blue gradient for small size -->
+  <g fill="url(#smallFaviconDotsGradient)">
+    <!-- Core pattern -->
+    <rect x="8.5" y="8.5" width="3" height="3" rx="0.5" />
+    <rect x="14.6" y="7.2" width="2.4" height="2.4" rx="0.5" />
+    <rect x="20.5" y="8.5" width="3" height="3" rx="0.5" />
+    
+    <rect x="6.2" y="14.2" width="3.6" height="3.6" rx="0.8" />
+    <rect x="13.9" y="13.9" width="4.4" height="4.4" rx="1" />
+    <rect x="22.2" y="14.2" width="3.6" height="3.6" rx="0.8" />
+    
+    <rect x="8.5" y="20.5" width="3" height="3" rx="0.5" />
+    <rect x="14.6" y="22.4" width="2.4" height="2.4" rx="0.5" />
+    <rect x="20.5" y="20.5" width="3" height="3" rx="0.5" />
+    
+    <!-- Accent dots -->
+    <rect x="12.2" y="12.2" width="1.6" height="1.6" rx="0.3" />
+    <rect x="18.2" y="12.2" width="1.6" height="1.6" rx="0.3" />
+    <rect x="12.2" y="18.2" width="1.6" height="1.6" rx="0.3" />
+    <rect x="18.2" y="18.2" width="1.6" height="1.6" rx="0.3" />
+  </g>
+</svg>
