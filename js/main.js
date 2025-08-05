@@ -1,17 +1,19 @@
 // Main JavaScript for Miisol Ltd Website
 
-// DOM Elements
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
-const navLinks = document.querySelectorAll('.nav-link');
-const contactForm = document.querySelector('.contact-form');
-
 // Initialize the website
 document.addEventListener('DOMContentLoaded', function() {
+    // DOM Elements
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('.nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const contactForm = document.querySelector('.contact-form');
+    
+    console.log('DOM loaded, initializing...');
     initializeNavigation();
     initializeScrollEffects();
     initializeContactForm();
     initializeAnimations();
+    initializeServiceToggles();
 });
 
 // Navigation functionality
@@ -265,6 +267,44 @@ function initializeAnimations() {
             heroVisual.style.transform = `translateY(${rate}px)`;
         }
     });
+}
+
+// Main JavaScript for Miisol Ltd Website
+
+console.log('main.js file loaded!');
+
+// Service card toggle functionality - Define globally immediately
+function toggleFeaturesBackup(button) {
+    console.log('toggleFeatures called!', button);
+    
+    const card = button.closest('.service-card');
+    const features = card.querySelector('.service-features');
+    const icon = button.querySelector('.toggle-icon');
+    const text = button.querySelector('.toggle-text');
+    
+    console.log('Elements found:', { card, features, icon, text });
+    console.log('Current collapsed state:', features.classList.contains('collapsed'));
+    
+    // Toggle collapsed state
+    features.classList.toggle('collapsed');
+    button.classList.toggle('active');
+    
+    console.log('New collapsed state:', features.classList.contains('collapsed'));
+    console.log('Features classes:', features.className);
+    
+    // Update button text and icon
+    if (features.classList.contains('collapsed')) {
+        text.textContent = 'View Details';
+        icon.textContent = '+';
+    } else {
+        text.textContent = 'Hide Details';
+        icon.textContent = '−';
+    }
+}
+
+function initializeServiceToggles() {
+    console.log('Initializing service toggles...');
+    console.log('toggleFeatures function available:', typeof toggleFeatures);
 }
 
 // Utility functions
