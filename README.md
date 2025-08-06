@@ -1,4 +1,4 @@
-# Miisol Ltd - AI Technology Solutions
+# Miisol Ltd - AI  &  API Technology Consulting and Solutions
 
 A modern, responsive website for Miisol Ltd, showcasing AI technology solutions, consulting services, and agent discovery platforms.
 
