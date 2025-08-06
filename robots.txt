@@ -1,0 +1,17 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://miisol.github.io/sitemap.xml
+
+# Disallow specific files for performance
+Disallow: /css/
+Disallow: /js/
+Disallow: /assets/
+
+# Allow images for SEO
+User-agent: Googlebot-Image
+Allow: /assets/
+
+# Crawl delay for good server performance
+Crawl-delay: 1
