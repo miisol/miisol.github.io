@@ -32,7 +32,7 @@ plugins:
 
 # SEO settings
 lang: en_US
-logo: /assets/logo.svg
+logo: /assets/images/logo.svg
 
 # Social media
 twitter:
