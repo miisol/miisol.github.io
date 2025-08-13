@@ -8,10 +8,10 @@ A modern, responsive website for Miisol Ltd, showcasing AI technology solutions,
 - **Responsive Layout**: Optimized for all devices (desktop, tablet, mobile)
 - **Interactive Elements**: Smooth animations and hover effects
 - **AI-Focused Content**: Sections dedicated to AI services and agent discovery
-- **Contact Form**: Functional contact form with validation
+- **Contact Form**: Client-side validation and accessible inputs
 - **Performance Optimized**: Fast loading with optimized CSS and JavaScript
-- **SEO Ready**: Semantic HTML structure and meta tags
-- **Accessibility**: WCAG compliant with keyboard navigation support
+- **SEO Ready**: Semantic HTML structure, meta tags, sitemap, robots
+- **Accessibility**: WCAG-friendly with keyboard navigation support
 
 ## 🚀 Live Demo
 
@@ -20,20 +20,24 @@ Visit the live website: [https://miisol.github.io](https://miisol.github.io)
 ## 📁 Project Structure
 
 ```
-miisol-github/
-├── index.html              # Main HTML file
+miisol_test_site/
+├── index.html                 # Main landing page
+├── coming-soon.html           # AI Discovery Platform teaser page
 ├── css/
-│   └── style.css           # Main stylesheet
+│   ├── style.css              # Main stylesheet
+│   └── all.css                # Icon font CSS
 ├── js/
-│   └── main.js             # JavaScript functionality
+│   └── script.js              # JavaScript functionality and animations
 ├── assets/
-│   ├── logo.svg            # Company logo
-│   └── favicon.svg         # Website favicon
-├── .github/
-│   └── copilot-instructions.md  # Copilot instructions
-├── README.md               # Project documentation
-└── .vscode/
-    └── tasks.json          # VS Code build tasks
+│   └── images/                # Logos, favicons, and images
+├── fonts/                     # Webfont files
+├── manifest.json              # PWA manifest
+├── robots.txt                 # Robots directives
+├── sitemap.xml                # XML sitemap
+├── _config.yml                # GitHub Pages/Jekyll config (optional)
+├── package.json               # Dependencies (e.g., GSAP, icons)
+├── package-lock.json
+└── README.md                  # Project documentation
 ```
 
 ## 🛠️ Technologies Used
@@ -46,31 +50,31 @@ miisol-github/
 
 ## 📋 Sections
 
-1. **Navigation**: Fixed header with smooth scroll navigation
+1. **Navigation**: Fixed header with mobile menu
 2. **Hero Section**: Eye-catching introduction with animated elements
-3. **About**: Company information and key statistics
-4. **Services**: Comprehensive overview of AI services offered
-5. **AI Labs**: Information about agent discovery platform
-6. **Contact**: Contact form and company information
-7. **Footer**: Links and additional information
+3. **What We Do**: Company services and capabilities
+4. **Technology Solutions**: Interactive solutions list
+5. **AI Discovery Platform**: Overview with CTA (coming-soon page)
+6. **Testimonials**: Client success stories
+7. **Contact**: Contact form and company information
+8. **Footer**: Links and additional information
 
 ## 🎨 Design Features
 
 ### Color Scheme
-- Primary: `#2563eb` (Blue)
-- Secondary: `#7c3aed` (Purple)
-- Accent: `#06b6d4` (Cyan)
+- Primary: `#0572ab`
+- Secondary: `#009ee2`
+- Accent: `#066da5`
 - Text: `#111827` (Dark Gray)
 - Background: `#ffffff` (White)
 
 ### Typography
 - Font Family: Inter (Google Fonts)
-- Responsive font sizing using CSS clamp()
+- Responsive font sizing using CSS `clamp()`
 - Proper hierarchy with semantic headings
 
 ### Animations
-- Floating cards in hero section
-- Scroll-triggered animations
+- Floating/stacked tech cards in hero section
 - Smooth hover transitions
 - Mobile menu animations
 
@@ -85,36 +89,26 @@ miisol-github/
 
 ### For GitHub Pages Deployment
 
-1. **Fork or Clone** this repository
-2. **Update Content**: Modify the content in `index.html` to match your needs
-3. **Configure GitHub Pages**:
-   - Go to repository Settings
-   - Navigate to Pages section
-   - Select source: Deploy from a branch
-   - Choose branch: main
-   - Select folder: / (root)
-4. **Access Your Site**: Visit `https://yourusername.github.io/miisol-github`
+1. Fork or clone this repository
+2. Update content in `index.html` as needed
+3. Configure GitHub Pages:
+   - Settings → Pages
+   - Source: Deploy from a branch
+   - Branch: main (or default), Folder: `/` (root)
+4. Access your site: `https://yourusername.github.io/<repo-name>`
 
 ### For Local Development
 
-1. **Clone the repository**:
+1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/miisol-github.git
-   cd miisol-github
+   git clone https://github.com/yourusername/<repo-name>.git
+   cd <repo-name>
    ```
 
-2. **Open with VS Code**:
+2. Use a local static server (recommended):
    ```bash
-   code .
-   ```
-
-3. **Use Live Server** (recommended):
-   - Install Live Server extension in VS Code
-   - Right-click on `index.html`
-   - Select "Open with Live Server"
-
-4. **Or use Python server**:
-   ```bash
+   npx serve .
+   # or
    python -m http.server 8000
    ```
    Then visit `http://localhost:8000`
@@ -123,69 +117,51 @@ miisol-github/
 
 ### Content Updates
 
-1. **Company Information**: Update text content in `index.html`
-2. **Services**: Modify the services section with your offerings
-3. **Contact Details**: Update contact information in the contact section
-4. **Branding**: Replace logo and favicon in the `assets/` folder
+1. Company information in `index.html`
+2. Services and solutions sections in `index.html`
+3. Contact details in the Contact section
+4. Branding assets in `assets/images/`
 
 ### Styling Changes
 
-1. **Colors**: Update CSS variables in `:root` selector in `style.css`
-2. **Fonts**: Change Google Fonts import and font-family declarations
-3. **Layout**: Modify CSS Grid and Flexbox properties
-4. **Animations**: Adjust keyframes and transition properties
+1. Colors: Update CSS variables in `:root` in `css/style.css`
+2. Fonts: Adjust Google Fonts includes and `font-family`
+3. Layout: Modify Grid/Flex properties
+4. Animations: Adjust keyframes and transitions
 
 ### Adding New Sections
 
-1. Add HTML structure to `index.html`
-2. Add corresponding styles to `style.css`
+1. Add HTML to `index.html`
+2. Add styles to `css/style.css`
 3. Update navigation links if needed
-4. Add any required JavaScript functionality to `main.js`
+4. Add any required JavaScript to `js/script.js`
 
 ## 🔧 Build and Development
 
-### VS Code Tasks
-
-The project includes VS Code tasks for development:
-
-- **Live Server**: Start a development server
-- **Validation**: HTML and CSS validation
-- **Build**: Minify CSS and JavaScript for production
-
-Run tasks using `Ctrl+Shift+P` > "Tasks: Run Task"
-
-### Performance Optimization
-
-- **Images**: Use WebP format for better compression
-- **CSS**: Minify CSS for production
-- **JavaScript**: Minify and bundle JavaScript files
-- **Fonts**: Use font-display: swap for better loading
-- **Lazy Loading**: Implemented for images
+- Validate HTML/CSS using your preferred tools
+- Minify CSS/JS for production if desired
+- Use `font-display: swap` (already enabled for icons) for better loading
 
 ## 📊 SEO and Analytics
 
 ### SEO Features
 
 - Semantic HTML5 structure
-- Meta description and keywords
-- Open Graph tags for social sharing
+- Meta description, keywords, Open Graph tags
 - Structured data markup
-- XML sitemap (add sitemap.xml if needed)
+- `robots.txt` and `sitemap.xml`
 
 ### Analytics Setup
 
-To add Google Analytics:
-
-1. Create a Google Analytics account
-2. Add the tracking code to the `<head>` section of `index.html`
-3. Configure goals and events as needed
+1. Create a Google Analytics property
+2. Add the tracking script to the `<head>` of `index.html`
 
 ## 🔒 Security Considerations
 
-- No sensitive data exposed in frontend code
-- Contact form validation (client-side only)
-- HTTPS required for production deployment
-- Regular dependency updates recommended
+- No sensitive data in frontend code
+- Client-side form validation
+- Serve over HTTPS in production
+- Keep dependencies up to date
 
 ## 🌍 Browser Support
 
@@ -201,19 +177,16 @@ To add Google Analytics:
 2. Create a feature branch: `git checkout -b feature-name`
 3. Commit changes: `git commit -am 'Add feature'`
 4. Push to branch: `git push origin feature-name`
-5. Submit a pull request
+5. Open a pull request
 
 ## 📄 License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ## 📞 Support
 
-For support and questions:
-
-- **Email**: hello@miisol.com
-- **GitHub Issues**: [Create an issue](https://github.com/yourusername/miisol-github/issues)
-- **Documentation**: This README file
+- **Email**: connect@miisol.net
+- **GitHub Issues**: Create an issue in your repository
 
 ## 🔮 Future Enhancements
 
@@ -223,17 +196,8 @@ For support and questions:
 - [ ] Multi-language support
 - [ ] Dark mode toggle
 - [ ] Advanced animations with Lottie
-- [ ] Progressive Web App (PWA) features
+- [ ] Progressive Web App features
 - [ ] Integration with headless CMS
-
----
-
-## 📈 Performance Metrics
-
-- **Lighthouse Score**: 95+ (Performance, Accessibility, Best Practices, SEO)
-- **Page Load Time**: < 3 seconds
-- **First Contentful Paint**: < 1.5 seconds
-- **Core Web Vitals**: All metrics in green
 
 ---
 

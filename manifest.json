@@ -1,55 +1,24 @@
 {
-  "name": "Miisol Ltd - AI Technology Solutions & Consulting",
+  "name": "Miisol Ltd",
   "short_name": "Miisol",
-  "description": "UK-based AI technology consulting company specialising in artificial intelligence solutions, cloud-native development, and enterprise digital transformation.",
+  "description": "AI & API technology consulting and solutions.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
+  "background_color": "#000000",
   "theme_color": "#0572ab",
-  "orientation": "portrait-primary",
-  "categories": ["business", "technology", "consulting"],
-  "lang": "en-GB",
   "icons": [
     {
-      "src": "./assets/Color logo - no background.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "./assets/Color logo - no background.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    },
-    {
-      "src": "./assets/miisol-favicon.svg",
+      "src": "assets/images/miisol-favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml"
-    }
-  ],
-  "shortcuts": [
-    {
-      "name": "Contact Us",
-      "short_name": "Contact",
-      "description": "Get in touch with our AI consulting experts",
-      "url": "/#contact",
-      "icons": [
-        {
-          "src": "./assets/miisol-favicon.svg",
-          "sizes": "96x96"
-        }
-      ]
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
     },
     {
-      "name": "Our Services",
-      "short_name": "Services",
-      "description": "Explore our AI and cloud-native solutions",
-      "url": "/#services",
-      "icons": [
-        {
-          "src": "./assets/miisol-favicon.svg",
-          "sizes": "96x96"
-        }
-      ]
+      "src": "assets/images/favicon-32x32.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ]
 }

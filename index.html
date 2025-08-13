@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en-GB">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>
@@ -55,7 +55,7 @@
     />
     <meta
       property="og:image"
-      content="https://miisol.github.io/assets/Color logo - no background.svg"
+      content="https://miisol.github.io/assets/images/color-logo-no-background.svg"
     />
     <meta property="og:url" content="https://miisol.github.io" />
     <meta property="og:site_name" content="Miisol Ltd" />
@@ -72,7 +72,7 @@
     />
     <meta
       property="twitter:image"
-      content="https://miisol.github.io/assets/Color logo - no background.svg"
+      content="https://miisol.github.io/assets/images/color-logo-no-background.svg"
     />
 
     <!-- Structured Data for SEO -->
@@ -83,7 +83,7 @@
         "name": "Miisol Ltd",
         "alternateName": "Miisol",
         "url": "https://miisol.github.io",
-        "logo": "https://miisol.github.io/assets/Color logo - no background.svg",
+        "logo": "https://miisol.github.io/assets/images/color-logo-no-background.svg",
         "description": "UK-based AI technology consulting company specialising in artificial intelligence solutions, cloud-native development, and enterprise digital transformation.",
         "foundingDate": "2024",
         "address": {
@@ -115,720 +115,949 @@
     </script>
 
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/all.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="icon" type="image/svg+xml" href="assets/miisol-favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="assets/images/miisol-favicon.svg" />
     <link
       rel="icon"
       type="image/svg+xml"
       sizes="32x32"
-      href="assets/favicon-32x32.svg"
+      href="assets/images/favicon-32x32.svg"
     />
-    <link rel="apple-touch-icon" href="assets/miisol-favicon.svg" />
+    <link rel="apple-touch-icon" href="assets/images/miisol-favicon.svg" />
+    <link rel="manifest" href="manifest.json" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   </head>
-  <body>
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link">Skip to main content</a>
-
-    <!-- Navigation -->
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-      <div class="nav-container">
-        <div class="nav-logo">
-          <img
-            src="assets/Color logo - no background.svg"
-            alt="Miisol Ltd - AI Technology Solutions"
-            class="logo"
-            width="120"
-            height="40"
-          />
-        </div>
-        <ul class="nav-menu" role="menubar">
-          <li class="nav-item" role="none">
-            <a href="#home" class="nav-link" role="menuitem">Home</a>
-          </li>
-          <li class="nav-item" role="none">
-            <a href="#services" class="nav-link" role="menuitem">Solutions</a>
-          </li>
-          <li class="nav-item" role="none">
-            <a href="#technologies" class="nav-link" role="menuitem"
-              >Technologies</a
-            >
-          </li>
-          <li class="nav-item" role="none">
-            <a href="#ai-labs" class="nav-link" role="menuitem">AI Platform</a>
-          </li>
-          <li class="nav-item" role="none">
-            <a href="#contact" class="nav-link" role="menuitem">Contact</a>
-          </li>
-        </ul>
-        <button
-          class="hamburger"
-          aria-label="Toggle navigation menu"
-          aria-expanded="false"
-        >
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <main id="main-content">
-      <section id="home" class="hero" aria-labelledby="hero-title">
-        <div class="hero-container">
-          <div class="hero-content">
-            <h1 id="hero-title" class="hero-title">
-              Transform Your Business with
-              <span class="gradient-text">AI & Cloud-Native Solutions</span>
-            </h1>
-            <p class="hero-description">
-              We deliver strategic technology consulting and implementation
-              services for modern enterprises. Our expertise spans artificial
-              intelligence, cloud-native architecture, and secure development
-              practices that drive measurable business outcomes.
-            </p>
-            <div class="hero-buttons">
-              <a
-                href="#contact"
-                class="btn btn-primary"
-                aria-describedby="consultation-desc"
-                >Schedule Consultation</a
-              >
-              <span id="consultation-desc" class="sr-only"
-                >Book a consultation to discuss your technology strategy</span
-              >
-              <a href="#services" class="btn btn-secondary"
-                >View Our Expertise</a
-              >
+<body>
+    <div class="container">
+        <div class="bg-gradient"></div>
+        
+        <!-- Navigation -->
+        <nav class="nav">
+            <div class="nav-content">
+                <div class="nav-logo">
+                    <img src="assets/images/color-logo-no-background.svg" alt="Miisol Logo" class="logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#what-we-do">Solutions</a></li>
+                    <li><a href="#technologies">Technologies</a></li>
+                    <li><a href="#ai-platform">AI Platform</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                    <span class="hamburger-line"></span>
+                </button>
             </div>
-            <div
-              class="hero-badges"
-              style="margin-top: 4rem"
-              role="list"
-              aria-label="Key service highlights"
-            >
-              <div class="badge" role="listitem">
-                ✓ Strategic Technology Planning
-              </div>
-              <div class="badge" role="listitem">
-                ✓ Enterprise-Grade Solutions
-              </div>
-              <div class="badge" role="listitem">✓ Security-First Approach</div>
-              <div class="badge" role="listitem">✓ Vendor-Neutral Advice</div>
-            </div>
-          </div>
-          <div class="hero-visual" aria-hidden="true">
-            <div
-              class="hero-animation"
-              role="img"
-              aria-label="Interactive technology showcase featuring modern development practices"
-            >
-              <!-- Floating Cards with Backgrounds -->
-              <div class="floating-card card-1" role="presentation">
-                <div class="card-content">
-                  <div class="card-icon" aria-hidden="true">🤖</div>
-                  <div class="card-text">AI Solutions</div>
-                  <div class="card-subtitle">Intelligent Automation</div>
-                </div>
-              </div>
-              <div class="floating-card card-2" role="presentation">
-                <div class="card-content">
-                  <div class="card-icon" aria-hidden="true">☁️</div>
-                  <div class="card-text">Cloud Native</div>
-                  <div class="card-subtitle">Scalable Architecture</div>
-                </div>
-              </div>
-              <div class="floating-card card-3" role="presentation">
-                <div class="card-content">
-                  <div class="card-icon" aria-hidden="true">🛡️</div>
-                  <div class="card-text">Strategy</div>
-                  <div class="card-subtitle">Technology Planning</div>
-                </div>
-              </div>
-              <div class="floating-card card-4" role="presentation">
-                <div class="card-content">
-                  <div class="card-icon" aria-hidden="true">🔗</div>
-                  <div class="card-text">API Strategy</div>
-                  <div class="card-subtitle">System Integration</div>
-                </div>
-              </div>
-              <div class="floating-card card-5" role="presentation">
-                <div class="card-content">
-                  <div class="card-icon" aria-hidden="true">📊</div>
-                  <div class="card-text">Application Modernisation</div>
-                  <div class="card-subtitle">Legacy is Legacy</div>
-                </div>
-              </div>
-              <div class="floating-card card-6" role="presentation">
-                <div class="card-content">
-                  <div class="card-icon" aria-hidden="true">🎯</div>
-                  <div class="card-text">DevSecOps</div>
-                  <div class="card-subtitle">Security First</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Services Section -->
-      <section id="services" class="services" aria-labelledby="services-title">
-        <div class="container">
-          <div class="section-header">
-            <h2 id="services-title" class="section-title">
-              Expert Technology Consulting & Implementation
-            </h2>
-            <p class="section-subtitle">
-              We provide comprehensive technology consulting services, from
-              strategic planning to hands-on implementation. Our approach
-              combines deep technical expertise with business acumen to deliver
-              solutions that scale.
-            </p>
-          </div>
-
-          <!-- Professional Consulting Approach -->
-          <div class="consulting-approach">
-            <div class="approach-content">
-              <h3>Our Consulting Philosophy</h3>
-              <p>
-                Technology should serve your business objectives, not constrain
-                them. We take a vendor-neutral approach, focusing on delivering
-                optimal solutions tailored to your specific needs, industry
-                requirements, and growth trajectory.
-              </p>
-
-              <div class="expertise-areas">
-                <div class="expertise-item">
-                  <span class="expertise-icon">🎯</span>
-                  <div class="expertise-content">
-                    <h4>Strategic Technology Planning</h4>
-                    <p>
-                      Technology roadmaps aligned with business objectives and
-                      industry best practices
-                    </p>
-                  </div>
-                </div>
-                <div class="expertise-item">
-                  <span class="expertise-icon">⚡</span>
-                  <div class="expertise-content">
-                    <h4>Modern Development Practices</h4>
-                    <p>
-                      Cloud-native architectures, DevSecOps, and scalable
-                      solutions using cutting-edge technologies
-                    </p>
-                  </div>
-                </div>
-                <div class="expertise-item">
-                  <span class="expertise-icon">🛡️</span>
-                  <div class="expertise-content">
-                    <h4>Enterprise Security & Compliance</h4>
-                    <p>
-                      Security-first development with comprehensive compliance
-                      frameworks and risk management
-                    </p>
-                  </div>
-                </div>
-                <div class="expertise-item">
-                  <span class="expertise-icon">🔄</span>
-                  <div class="expertise-content">
-                    <h4>Application Modernisation</h4>
-                    <p>
-                      Transform legacy systems into modern, scalable solutions
-                      using cloud-native technologies and microservices
-                      architecture
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Core Consulting Services -->
-          <div class="consulting-services">
-            <h3>Comprehensive Technology Solutions</h3>
-            <div class="services-list">
-              <div class="service-area">
-                <h4>🤖 AI & Machine Learning Consulting</h4>
-                <p>
-                  Strategic AI implementation, custom agent development, ML
-                  pipeline optimisation, and intelligent automation solutions
-                  tailored to your business processes.
-                </p>
-              </div>
-              <div class="service-area">
-                <h4>☁️ Cloud-Native Architecture</h4>
-                <p>
-                  Scalable infrastructure design, microservices implementation,
-                  cloud migration strategies, and container orchestration for
-                  modern applications.
-                </p>
-              </div>
-              <div class="service-area">
-                <h4>🛡️ DevSecOps & Security</h4>
-                <p>
-                  Secure development practices, automated testing pipelines,
-                  compliance frameworks, and continuous security monitoring for
-                  enterprise environments.
-                </p>
-              </div>
-              <div class="service-area">
-                <h4>🔗 API Strategy & Integration</h4>
-                <p>
-                  RESTful and GraphQL API design, system integration planning,
-                  data architecture, and enterprise service mesh implementation.
-                </p>
-              </div>
-              <div class="service-area">
-                <h4>📊 Digital Transformation</h4>
-                <p>
-                  Legacy system modernisation, workflow automation, business
-                  process optimisation, and technology stack migration
-                  strategies.
-                </p>
-              </div>
-              <div class="service-area">
-                <h4>🎯 Technical Leadership & Training</h4>
-                <p>
-                  Team capability building, best practices implementation,
-                  technical mentorship, and knowledge transfer programmes.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <!-- Client Success Stats -->
-          <div
-            class="stats-section"
-            role="region"
-            aria-labelledby="success-stats"
-          >
-            <h3 id="success-stats" class="sr-only">
-              Client Success Statistics
-            </h3>
-            <div class="stat-item">
-              <div class="stat-number" aria-label="50 plus">50+</div>
-              <div class="stat-label">Technology Projects Delivered</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" aria-label="50 plus">50+</div>
-              <div class="stat-label">Enterprise Clients</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" aria-label="99.9 percent">99.9%</div>
-              <div class="stat-label">Project Success Rate</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number" aria-label="24 hours, 7 days">24/7</div>
-              <div class="stat-label">Expert Support</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Technology Stack Section -->
-      <section id="technologies" class="technologies">
-        <div class="container">
-          <div class="section-header">
-            <h2 class="section-title">Technology Expertise</h2>
-            <p class="section-subtitle">
-              We master cutting-edge technologies and platforms to deliver
-              optimal solutions. Our vendor-neutral approach ensures you get the
-              right technology for your specific requirements.
-            </p>
-          </div>
-          <div class="tech-categories">
-            <div class="tech-category">
-              <h3>Artificial Intelligence & ML</h3>
-              <div class="tech-tags">
-                <span class="tech-tag">TensorFlow</span>
-                <span class="tech-tag">PyTorch</span>
-                <span class="tech-tag">OpenAI GPT</span>
-                <span class="tech-tag">Hugging Face</span>
-                <span class="tech-tag">Scikit-learn</span>
-                <span class="tech-tag">MLflow</span>
-              </div>
-            </div>
-            <div class="tech-category">
-              <h3>Cloud Platforms & Infrastructure</h3>
-              <div class="tech-tags">
-                <span class="tech-tag">AWS</span>
-                <span class="tech-tag">Azure</span>
-                <span class="tech-tag">Google Cloud</span>
-                <span class="tech-tag">Kubernetes</span>
-                <span class="tech-tag">Docker</span>
-                <span class="tech-tag">Terraform</span>
-              </div>
-            </div>
-            <div class="tech-category">
-              <h3>Modern Development Stack</h3>
-              <div class="tech-tags">
-                <span class="tech-tag">Python</span>
-                <span class="tech-tag">Node.js</span>
-                <span class="tech-tag">Next.js</span>
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">Go</span>
-                <span class="tech-tag">GraphQL</span>
-              </div>
-            </div>
-            <div class="tech-category">
-              <h3>DevSecOps & Automation</h3>
-              <div class="tech-tags">
-                <span class="tech-tag">Jenkins</span>
-                <span class="tech-tag">GitLab CI</span>
-                <span class="tech-tag">GitHub Actions</span>
-                <span class="tech-tag">ArgoCD</span>
-                <span class="tech-tag">Helm</span>
-                <span class="tech-tag">Ansible</span>
-              </div>
-            </div>
-            <div class="tech-category">
-              <h3>Monitoring & Security</h3>
-              <div class="tech-tags">
-                <span class="tech-tag">Prometheus</span>
-                <span class="tech-tag">Grafana</span>
-                <span class="tech-tag">ELK Stack</span>
-                <span class="tech-tag">SonarQube</span>
-                <span class="tech-tag">Vault</span>
-                <span class="tech-tag">Istio</span>
-              </div>
-            </div>
-            <div class="tech-category">
-              <h3>Data & Analytics</h3>
-              <div class="tech-tags">
-                <span class="tech-tag">Apache Spark</span>
-                <span class="tech-tag">Kafka</span>
-                <span class="tech-tag">Snowflake</span>
-                <span class="tech-tag">Databricks</span>
-                <span class="tech-tag">dbt</span>
-                <span class="tech-tag">Airflow</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- AI Labs Section -->
-      <section id="ai-labs" class="ai-labs" aria-labelledby="ai-labs-title">
-        <div class="container">
-          <div class="section-header">
-            <h2 id="ai-labs-title" class="section-title">
-              AI Discovery Platform
-            </h2>
-            <p class="section-subtitle">
-              Explore, evaluate, and deploy AI solutions with our comprehensive
-              discovery platform
-            </p>
-          </div>
-          <div class="labs-content">
-            <div class="labs-intro">
-              <h3>Intelligent Technology Marketplace</h3>
-              <p>
-                Our AI Discovery Platform provides a comprehensive ecosystem for
-                organisations to explore, evaluate, and deploy AI solutions.
-                From intelligent automation to advanced analytics, discover the
-                perfect technology solutions for your business challenges.
-              </p>
-              <div
-                class="platform-features"
-                role="region"
-                aria-label="Platform features"
-              >
-                <div class="platform-feature">
-                  <div class="feature-icon" aria-hidden="true">🔍</div>
-                  <h4>Solution Discovery</h4>
-                  <p>
-                    Browse curated AI and technology solutions across different
-                    domains and use cases.
-                  </p>
-                </div>
-                <div class="platform-feature">
-                  <div class="feature-icon" aria-hidden="true">🧪</div>
-                  <h4>Proof of Concept</h4>
-                  <p>
-                    Test solutions in secure environments before production
-                    deployment.
-                  </p>
-                </div>
-                <div class="platform-feature">
-                  <div class="feature-icon" aria-hidden="true">⚡</div>
-                  <h4>Rapid Implementation</h4>
-                  <p>
-                    Deploy solutions to your infrastructure with expert guidance
-                    and support.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="labs-demo">
-              <div class="demo-container">
-                <h4>Solution Categories</h4>
-                <div class="agent-categories">
-                  <div class="category-tag">Natural Language Processing</div>
-                  <div class="category-tag">Computer Vision</div>
-                  <div class="category-tag">Predictive Analytics</div>
-                  <div class="category-tag">Process Automation</div>
-                  <div class="category-tag">Decision Support</div>
-                  <div class="category-tag">Data Intelligence</div>
-                  <div class="category-tag">Customer Experience</div>
-                  <div class="category-tag">Content Generation</div>
-                </div>
-                <a href="#contact" class="btn btn-primary"
-                  >Request Platform Access</a
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Testimonials Section -->
-      <section
-        id="testimonials"
-        class="testimonials"
-        aria-labelledby="testimonials-title"
-      >
-        <div class="container">
-          <div class="section-header">
-            <h2 id="testimonials-title" class="section-title">
-              Client Success Stories
-            </h2>
-            <p class="section-subtitle">
-              Trusted by leading organisations for technology transformation
-            </p>
-          </div>
-          <div
-            class="testimonials-grid"
-            role="region"
-            aria-label="Client testimonials"
-          >
-            <article class="testimonial-card">
-              <blockquote class="testimonial-content">
-                <p>
-                  "Miisol's cloud-native transformation strategy transformed our
-                  entire infrastructure. We achieved 99.9% uptime and reduced
-                  deployment times from hours to minutes with their expert
-                  guidance."
-                </p>
-              </blockquote>
-              <footer class="testimonial-author">
-                <div class="author-info">
-                  <cite>
-                    <h4>Sarah Johnson</h4>
-                    <p>CTO, TechCorp Solutions</p>
-                  </cite>
-                </div>
-              </footer>
-            </article>
-            <article class="testimonial-card">
-              <blockquote class="testimonial-content">
-                <p>
-                  "The AI solutions implemented by Miisol revolutionised our
-                  operations. Their strategic approach and technical expertise
-                  delivered 40% efficiency improvements."
-                </p>
-              </blockquote>
-              <footer class="testimonial-author">
-                <div class="author-info">
-                  <cite>
-                    <h4>Michael Chen</h4>
-                    <p>Head of Innovation, GlobalFinance Ltd</p>
-                  </cite>
-                </div>
-              </footer>
-            </article>
-            <article class="testimonial-card">
-              <blockquote class="testimonial-content">
-                <p>
-                  "Working with Miisol on our DevSecOps transformation was
-                  exceptional. Their security-first approach and automated
-                  pipelines gave us confidence to deploy daily."
-                </p>
-              </blockquote>
-              <footer class="testimonial-author">
-                <div class="author-info">
-                  <cite>
-                    <h4>Emma Thompson</h4>
-                    <p>Head of Security, DataTech Industries</p>
-                  </cite>
-                </div>
-              </footer>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Contact Section -->
-      <section id="contact" class="contact" aria-labelledby="contact-title">
-        <div class="container">
-          <div class="section-header">
-            <h2 id="contact-title" class="section-title">
-              Start Your Technology Transformation
-            </h2>
-            <p class="section-subtitle">
-              Ready to elevate your technology strategy? Let's discuss your
-              requirements and objectives.
-            </p>
-          </div>
-          <div class="contact-content">
-            <div class="contact-info">
-              <h3>Contact Information</h3>
-              <div class="contact-item">
-                <div class="contact-icon" aria-hidden="true">📧</div>
-                <div>
-                  <h4>Email</h4>
-                  <p>
-                    <a
-                      href="mailto:connect@miisol.net"
-                      aria-label="Send email to connect at miisol dot net"
-                      >connect@miisol.net</a
-                    >
-                  </p>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon" aria-hidden="true">📞</div>
-                <div>
-                  <h4>Phone</h4>
-                  <p>
-                    <a
-                      href="tel:+447946988205"
-                      aria-label="Call +44 7946 988205"
-                      >+44 7946 988205</a
-                    >
-                  </p>
-                </div>
-              </div>
-              <div class="contact-item">
-                <div class="contact-icon" aria-hidden="true">🌍</div>
-                <div>
-                  <h4>Location</h4>
-                  <p>London, United Kingdom</p>
-                </div>
-              </div>
-            </div>
-            <form class="contact-form" aria-labelledby="contact-form-title">
-              <h3 id="contact-form-title" class="sr-only">Contact Form</h3>
-              <div class="form-group">
-                <label for="name">Full Name *</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  required
-                  aria-describedby="name-error"
-                />
-                <span id="name-error" class="error-message" role="alert"></span>
-              </div>
-              <div class="form-group">
-                <label for="email">Email Address *</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  required
-                  aria-describedby="email-error"
-                />
-                <span
-                  id="email-error"
-                  class="error-message"
-                  role="alert"
-                ></span>
-              </div>
-              <div class="form-group">
-                <label for="company">Company/Organisation</label>
-                <input type="text" id="company" name="company" />
-              </div>
-              <div class="form-group">
-                <label for="message">Project Requirements *</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  required
-                  aria-describedby="message-error"
-                  placeholder="Tell us about your technology requirements, challenges, or transformation goals..."
-                ></textarea>
-                <span
-                  id="message-error"
-                  class="error-message"
-                  role="alert"
-                ></span>
-              </div>
-              <button type="submit" class="btn btn-primary">
-                Send Message
-              </button>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer" role="contentinfo">
-      <div class="container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>Miisol Ltd</h3>
-            <p>
-              Professional technology consulting for modern enterprises. We
-              deliver strategic guidance, expert implementation, and ongoing
-              support for your digital transformation journey.
-            </p>
-            <div class="footer-contact">
-              <p>
-                <a
-                  href="mailto:connect@miisol.net"
-                  aria-label="Email us at connect at miisol dot net"
-                  >connect@miisol.net</a
-                >
-              </p>
-              <p>
-                <a
-                  href="tel:+447946988205"
-                  aria-label="Call us at +44 7946 988205"
-                  >+44 7946 988205</a
-                >
-              </p>
-            </div>
-          </div>
-          <div class="footer-section">
-            <h3>Quick Links</h3>
-            <nav aria-label="Footer navigation">
-              <ul role="list">
+        </nav>
+        <div class="mobile-menu">
+            <ul class="mobile-nav-links">
                 <li><a href="#home">Home</a></li>
-                <li><a href="#services">Solutions</a></li>
+                <li><a href="#what-we-do">Solutions</a></li>
                 <li><a href="#technologies">Technologies</a></li>
-                <li><a href="#ai-labs">AI Platform</a></li>
+                <li><a href="#ai-platform">AI Platform</a></li>
                 <li><a href="#contact">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="footer-section">
-            <h3>Expertise</h3>
-            <ul role="list">
-              <li>AI & Machine Learning</li>
-              <li>Cloud-Native Architecture</li>
-              <li>DevSecOps Implementation</li>
-              <li>Digital Transformation</li>
-              <li>Technical Leadership</li>
             </ul>
-          </div>
         </div>
-        <div class="footer-bottom">
-          <p>
-            &copy; 2024 Miisol Ltd. All rights reserved. |
-            <a href="#privacy" aria-label="Privacy Policy">Privacy Policy</a> |
-            <a href="#terms" aria-label="Terms of Service">Terms of Service</a>
-          </p>
-        </div>
-      </div>
-    </footer>
 
-    <script src="js/main.js"></script>
-  </body>
+        <!-- Main Content -->
+        <main class="main-content" id="home">
+            <div class="hero-section">
+                <div class="hero-left">
+                    
+                    
+                    <h1 class="hero-title">Transform Your Business with <br><span class="gradient-text">AI & Cloud-Native Solutions</span></h1>
+                    
+                    <p class="hero-subtitle">Transforming Ideas Into Software Success Stories.</p>
+                    
+                    <div class="hero-cta-group">
+                        <!-- From Uiverse.io by alexmaracinaru --> 
+                        <a class="cta no-arrow" href="#contact">
+                          <span class="hover-underline-animation"> Schedule Consultation </span>
+                        </a>
+                        <a class="cta" href="#what-we-do">
+                          <span class="hover-underline-animation"> View Our Expertise </span>
+                          <svg
+                            id="arrow-horizontal"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="30"
+                            height="10"
+                            viewBox="0 0 46 16"
+                          >
+                            <path
+                              id="Path_10"
+                              data-name="Path 10"
+                              d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z"
+                              transform="translate(30)"
+                            ></path>
+                          </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="hero-right">
+                    <!-- Card Swap Component -->
+                    <div class="card-swap-container" id="cardSwapContainer">
+                        <div class="card tech-card" data-card="0">
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <div class="tech-icon">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                        </svg>
+                                    </div>
+                                    <h3>AI & Machine Learning</h3>
+                                </div>
+                                <p>Intelligent automation and predictive analytics powered by cutting-edge AI technologies.</p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">TensorFlow</span>
+                                    <span class="tech-tag">PyTorch</span>
+                                    <span class="tech-tag">OpenAI</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card tech-card" data-card="1">
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <div class="tech-icon">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+                                        </svg>
+                                    </div>
+                                    <h3>Cloud Architecture</h3>
+                                </div>
+                                <p>Scalable cloud infrastructure with microservices and container orchestration.</p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">AWS</span>
+                                    <span class="tech-tag">Kubernetes</span>
+                                    <span class="tech-tag">Docker</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card tech-card" data-card="2">
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <div class="tech-icon">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                                            <path d="m9 12 2 2 4-4"/>
+                                        </svg>
+                                    </div>
+                                    <h3>DevSecOps</h3>
+                                </div>
+                                <p>Secure development with automated CI/CD pipelines and security monitoring.</p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Jenkins</span>
+                                    <span class="tech-tag">GitLab</span>
+                                    <span class="tech-tag">ArgoCD</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card tech-card" data-card="3">
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <div class="tech-icon">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                                        </svg>
+                                    </div>
+                                    <h3>Modern Development</h3>
+                                </div>
+                                <p>Full-stack development with latest frameworks and programming languages.</p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">React</span>
+                                    <span class="tech-tag">Node.js</span>
+                                    <span class="tech-tag">Python</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="card tech-card" data-card="4">
+                            <div class="card-content">
+                                <div class="card-header">
+                                    <div class="tech-icon">
+                                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+                                        </svg>
+                                    </div>
+                                    <h3>Data & Analytics</h3>
+                                </div>
+                                <p>Big data processing and analytics with modern data engineering tools.</p>
+                                <div class="tech-tags">
+                                    <span class="tech-tag">Spark</span>
+                                    <span class="tech-tag">Kafka</span>
+                                    <span class="tech-tag">Snowflake</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Statistics Section -->
+        <section class="stats-section">
+            <div class="stats-container">
+                <div class="design-card">
+                    <h2>Design<br>Develop<br>Deploy</h2>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="web-section">
+                        <h3>99.9%</h3>
+                        <p>Project Success Rate</p>
+
+                    </div>
+                    
+                    <div class="projects-card">
+                        <div class="projects-number">50+</div>
+                        <div class="projects-label">Technology Projects Delivered</div>
+                        <div class="toggle-switch">
+                            <div class="toggle-option active">Delivered</div>
+                            <div class="toggle-option">✓</div>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fi fi-br-clock"></i></div>
+                        <div class="stat-content">
+                            <h4>50+</h4>
+                            <p>Enterprise Clients</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fi fi-br-laptop"></i></div>
+                        <div class="stat-content">
+                            <h4>1M+</h4>
+                            <p>Coding Hours</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What We Do Section -->
+        <section class="what-we-do-section" id="what-we-do">
+            <div class="section-tag">What We Do</div>
+            
+            <h2 class="section-title">Expert Technology Consulting & Implementation</h2>
+            <p>We provide comprehensive technology consulting services, from strategic planning to hands-on implementation. Our approach combines deep technical expertise with business acumen to deliver solutions that scale.</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fi fi-br-bolt"></i></div>
+                    <h3>Strategic Technology Planning</h3>
+                    <p>Technology roadmaps aligned with business objectives and industry best practices</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fi fi-br-chart-line-up"></i></div>
+                    <h3>Modern Development Practices</h3>
+                    <p>Cloud-native architectures, DevSecOps, and scalable solutions using cutting-edge technologies</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fi fi-br-chart-mixed"></i></div>
+                    <h3>Enterprise Security & Compliance</h3>
+                    <p>Security-first development with comprehensive compliance frameworks and risk management</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon"><i class="fi fi-br-gears"></i></div>
+                    <h3>Application Modernisation</h3>
+                    <p>Transform legacy systems into modern, scalable solutions using cloud-native technologies and microservices architecture</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Technology Solutions Section -->
+        <section class="tech-solutions-section">
+            <h1 class="fluid">Comprehensive Technology Solutions</h1>
+            <p class="pyramid-text">
+                <span class="line line-1">Transforming businesses through strategic technology implementation. From AI-powered automation</span>
+                <span class="line line-2">to cloud-native architectures, we deliver end-to-end solutions that drive innovation</span>
+                <span class="line line-3">and accelerate digital transformation across your entire technology stack.</span>
+            </p>
+            
+            <ul>
+                <li data-active="true">
+                    <article>
+                        <h3>AI & ML Consulting</h3>
+                        <p>
+                            Strategic AI implementation, custom agent development, ML pipeline 
+                            optimisation, and intelligent automation solutions tailored to your 
+                            business processes.
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h4a2 2 0 0 1 2 2v1.28c.6.35 1 .98 1 1.72 0 1.1-.9 2-2 2-.74 0-1.39-.4-1.73-1H14v4a2 2 0 0 1-2 2h-1.28c-.35.6-.98 1-1.72 1-1.1 0-2-.9-2-2 0-.74.4-1.39 1-1.73V13H4a2 2 0 0 1-2-2v-1.28c-.6-.35-1-.98-1-1.72 0-1.1.9-2 2-2 .74 0 1.39.4 1.73 1H8V4a2 2 0 0 1 2-2h1.28c.35-.6.98-1 1.72-1z"/>
+                        </svg>
+                    </article>
+                </li>
+                
+                <li>
+                    <article>
+                        <h3>Cloud Architecture</h3>
+                        <p>
+                            Scalable infrastructure design, microservices implementation, cloud 
+                            migration strategies, and container orchestration for modern applications.
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+                        </svg>
+                    </article>
+                </li>
+                
+                <li>
+                    <article>
+                        <h3>DevSecOps</h3>
+                        <p>
+                            Secure development practices, automated testing pipelines, compliance 
+                            frameworks, and continuous security monitoring for enterprise environments.
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                    </article>
+                </li>
+                
+                <li>
+                    <article>
+                        <h3>API Strategy</h3>
+                        <p>
+                            RESTful and GraphQL API design, system integration planning, data 
+                            architecture, and enterprise service mesh implementation.
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M14 9a2 2 0 0 1-2 2H6l-4-4 4-4h6a2 2 0 0 1 2 2v4z"/>
+                            <path d="M18 9h4l-4 4-4-4h4z"/>
+                        </svg>
+                    </article>
+                </li>
+                
+                <li>
+                    <article>
+                        <h3>Digital Transform</h3>
+                        <p>
+                            Legacy system modernisation, workflow automation, business process 
+                            optimisation, and technology stack migration strategies.
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="7.5,4.21 12,6.81 16.5,4.21"/>
+                            <polyline points="7.5,19.79 7.5,14.6 3,12"/>
+                            <polyline points="21,12 16.5,14.6 16.5,19.79"/>
+                            <polyline points="3.27,6.96 12,12.01 20.73,6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </article>
+                </li>
+                
+                <li>
+                    <article>
+                        <h3>Tech Leadership</h3>
+                        <p>
+                            Team capability building, best practices implementation, technical 
+                            mentorship, and knowledge transfer programmes.
+                        </p>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="m22 21-3-3 3-3"/>
+                            <path d="M16 18h6"/>
+                        </svg>
+                    </article>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Flip Cards Section -->
+        <section class="flip-cards-section" id="technologies">
+            <div class="section-tag">Our Services</div>
+            
+            <h2 class="section-title">Technology Expertise</h2>
+            <p>We master cutting-edge technologies and platforms to deliver optimal solutions. Our vendor-neutral approach ensures you get the right technology for your specific requirements.</p>
+            
+            <div class="cards-grid">
+                <div class="card-flip-container" id="cardFlip1">
+                    <div class="card-flip-inner">
+                        <!-- Front of card -->
+                        <div class="card-front">
+                            <div class="gradient-overlay"></div>
+                            
+                            
+
+                            <!-- Bottom content -->
+                            <div class="bottom-content">
+                                <div class="content-row">
+                                    <div class="text-content">
+                                        <h3 class="title">Service Title 1</h3>
+                                        <p class="subtitle">Service description here</p>
+                                    </div>
+                                    <div class="icon-wrapper">
+                                        <div class="icon-bg"></div>
+                                        <i class="fi fi-br-robot zap-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Back of card -->
+                        <div class="card-back">
+                            <div class="gradient-overlay"></div>
+                            
+                            <div class="back-content">
+                                <div class="back-header">
+                                    <div class="back-title-row">
+                                        <div class="code-icon-container">
+                                            <svg class="code-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="back-title">Service Title 1</h3>
+                                    </div>
+                                    <p class="description">Detailed service description will go here.</p>
+                                </div>
+
+                                <div class="features-list">
+                                    <!-- Features will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-flip-container" id="cardFlip2">
+                    <div class="card-flip-inner">
+                        <!-- Front of card -->
+                        <div class="card-front">
+                            <div class="gradient-overlay"></div>
+                            
+                            
+
+                            <!-- Bottom content -->
+                            <div class="bottom-content">
+                                <div class="content-row">
+                                    <div class="text-content">
+                                        <h3 class="title">Service Title 2</h3>
+                                        <p class="subtitle">Service description here</p>
+                                    </div>
+                                    <div class="icon-wrapper">
+                                        <div class="icon-bg"></div>
+                                        <i class="fi fi-br-cloud zap-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Back of card -->
+                        <div class="card-back">
+                            <div class="gradient-overlay"></div>
+                            
+                            <div class="back-content">
+                                <div class="back-header">
+                                    <div class="back-title-row">
+                                        <div class="code-icon-container">
+                                            <svg class="code-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="back-title">Service Title 2</h3>
+                                    </div>
+                                    <p class="description">Detailed service description will go here.</p>
+                                </div>
+
+                                <div class="features-list">
+                                    <!-- Features will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-flip-container" id="cardFlip3">
+                    <div class="card-flip-inner">
+                        <!-- Front of card -->
+                        <div class="card-front">
+                            <div class="gradient-overlay"></div>
+                            
+                            
+
+                            <!-- Bottom content -->
+                            <div class="bottom-content">
+                                <div class="content-row">
+                                    <div class="text-content">
+                                        <h3 class="title">Service Title 3</h3>
+                                        <p class="subtitle">Service description here</p>
+                                    </div>
+                                    <div class="icon-wrapper">
+                                        <div class="icon-bg"></div>
+                                        <i class="fi fi-br-code zap-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Back of card -->
+                        <div class="card-back">
+                            <div class="gradient-overlay"></div>
+                            
+                            <div class="back-content">
+                                <div class="back-header">
+                                    <div class="back-title-row">
+                                        <div class="code-icon-container">
+                                            <svg class="code-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="back-title">Service Title 3</h3>
+                                    </div>
+                                    <p class="description">Detailed service description will go here.</p>
+                                </div>
+
+                                <div class="features-list">
+                                    <!-- Features will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-flip-container" id="cardFlip4">
+                    <div class="card-flip-inner">
+                        <!-- Front of card -->
+                        <div class="card-front">
+                            <div class="gradient-overlay"></div>
+                            
+                            
+
+                            <!-- Bottom content -->
+                            <div class="bottom-content">
+                                <div class="content-row">
+                                    <div class="text-content">
+                                        <h3 class="title">Service Title 4</h3>
+                                        <p class="subtitle">Service description here</p>
+                                    </div>
+                                    <div class="icon-wrapper">
+                                        <div class="icon-bg"></div>
+                                        <i class="fi fi-br-shield-check zap-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Back of card -->
+                        <div class="card-back">
+                            <div class="gradient-overlay"></div>
+                            
+                            <div class="back-content">
+                                <div class="back-header">
+                                    <div class="back-title-row">
+                                        <div class="code-icon-container">
+                                            <svg class="code-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="back-title">Service Title 4</h3>
+                                    </div>
+                                    <p class="description">Detailed service description will go here.</p>
+                                </div>
+
+                                <div class="features-list">
+                                    <!-- Features will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-flip-container" id="cardFlip5">
+                    <div class="card-flip-inner">
+                        <!-- Front of card -->
+                        <div class="card-front">
+                            <div class="gradient-overlay"></div>
+                            
+                            
+
+                            <!-- Bottom content -->
+                            <div class="bottom-content">
+                                <div class="content-row">
+                                    <div class="text-content">
+                                        <h3 class="title">Service Title 5</h3>
+                                        <p class="subtitle">Service description here</p>
+                                    </div>
+                                    <div class="icon-wrapper">
+                                        <div class="icon-bg"></div>
+                                        <i class="fi fi-br-activity zap-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Back of card -->
+                        <div class="card-back">
+                            <div class="gradient-overlay"></div>
+                            
+                            <div class="back-content">
+                                <div class="back-header">
+                                    <div class="back-title-row">
+                                        <div class="code-icon-container">
+                                            <svg class="code-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="back-title">Service Title 5</h3>
+                                    </div>
+                                    <p class="description">Detailed service description will go here.</p>
+                                </div>
+
+                                <div class="features-list">
+                                    <!-- Features will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-flip-container" id="cardFlip6">
+                    <div class="card-flip-inner">
+                        <!-- Front of card -->
+                        <div class="card-front">
+                            <div class="gradient-overlay"></div>
+                            
+                            
+
+                            <!-- Bottom content -->
+                            <div class="bottom-content">
+                                <div class="content-row">
+                                    <div class="text-content">
+                                        <h3 class="title">Service Title 6</h3>
+                                        <p class="subtitle">Service description here</p>
+                                    </div>
+                                    <div class="icon-wrapper">
+                                        <div class="icon-bg"></div>
+                                        <i class="fi fi-br-database zap-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Back of card -->
+                        <div class="card-back">
+                            <div class="gradient-overlay"></div>
+                            
+                            <div class="back-content">
+                                <div class="back-header">
+                                    <div class="back-title-row">
+                                        <div class="code-icon-container">
+                                            <svg class="code-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+                                            </svg>
+                                        </div>
+                                        <h3 class="back-title">Service Title 6</h3>
+                                    </div>
+                                    <p class="description">Detailed service description will go here.</p>
+                                </div>
+
+                                <div class="features-list">
+                                    <!-- Features will be generated by JavaScript -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AI Discovery Platform Section -->
+        <section class="ai-discovery-section" id="ai-platform">
+            <div class="discovery-header">
+                <h1 class="discovery-title">AI Discovery Platform</h1>
+                <p class="discovery-subtitle">Explore, evaluate, and deploy AI solutions with our comprehensive discovery platform</p>
+                <div class="discovery-tag">Intelligent Technology Marketplace</div>
+                <p class="discovery-description">Our AI Discovery Platform provides a comprehensive ecosystem for organisations to explore, evaluate, and deploy AI solutions. From intelligent automation to advanced analytics, discover the perfect technology solutions for your business challenges.</p>
+            </div>
+
+            <!-- Main Feature Cards -->
+            <div class="meshy-cards-container">
+                <div class="meshy-card">
+                    <div class="meshy-card-content">
+                        <div class="meshy-card-inner">
+                            <div class="meshy-icon-container">
+                                <svg class="meshy-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="11" cy="11" r="8"></circle>
+                                    <path d="M21 21l-4.35-4.35"></path>
+                                </svg>
+                            </div>
+                            <h3 class="meshy-card-title">Solution Discovery</h3>
+                            <p class="meshy-card-description">Browse curated AI and technology solutions across different domains and use cases.</p>
+                            <div class="meshy-card-footer">
+                                <svg class="meshy-footer-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                                    <path d="M16 7h6v6"></path>
+                                    <path d="m22 7-8.5 8.5-5-5L2 17"></path>
+                                </svg>
+                                <span class="meshy-footer-text">🔍 Explore Solutions</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meshy-card">
+                    <div class="meshy-card-content">
+                        <div class="meshy-card-inner">
+                            <div class="meshy-icon-container">
+                                <svg class="meshy-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.51 2.51 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"></path>
+                                    <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.51 2.51 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="meshy-card-title">Proof of Concept</h3>
+                            <p class="meshy-card-description">Test solutions in secure environments before production deployment.</p>
+                            <div class="meshy-card-footer">
+                                <svg class="meshy-footer-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                                    <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"></path>
+                                </svg>
+                                <span class="meshy-footer-text">🧪 Test & Validate</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="meshy-card">
+                    <div class="meshy-card-content">
+                        <div class="meshy-card-inner">
+                            <div class="meshy-icon-container">
+                                <svg class="meshy-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                </svg>
+                            </div>
+                            <h3 class="meshy-card-title">Rapid Implementation</h3>
+                            <p class="meshy-card-description">Deploy solutions to your infrastructure with expert guidance and support.</p>
+                            <div class="meshy-card-footer">
+                                <svg class="meshy-footer-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                                    <path d="M12 6v6l4 2"></path>
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                </svg>
+                                <span class="meshy-footer-text">⚡ Fast Deploy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solution Categories -->
+            <div class="solution-categories">
+                <h2 class="categories-title">Solution Categories</h2>
+                <div class="categories-grid">
+                    <div class="category-item">Natural Language Processing</div>
+                    <div class="category-item">Computer Vision</div>
+                    <div class="category-item">Predictive Analytics</div>
+                    <div class="category-item">Process Automation</div>
+                    <div class="category-item">Decision Support</div>
+                    <div class="category-item">Data Intelligence</div>
+                    <div class="category-item">Customer Experience</div>
+                    <div class="category-item">Content Generation</div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="discovery-cta">
+                <a href="coming-soon.html" class="platform-access-btn">
+                    <span class="circle" aria-hidden="true">
+                        <span class="icon arrow"></span>
+                    </span>
+                    <span class="button-text">Platform Access</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="testimonials-section">
+            <div class="section-tag">Client Success Stories</div>
+            
+            <h2 class="section-title">Trusted by leading organisations for technology transformation</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Miisol's cloud-native transformation strategy transformed our entire infrastructure. We achieved 99.9% uptime and reduced deployment times from hours to minutes with their expert guidance."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4 class="author-name">Sarah Johnson</h4>
+                                <p class="author-title">CTO, TechCorp Solutions</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"The AI solutions implemented by Miisol revolutionised our operations. Their strategic approach and technical expertise delivered 40% efficiency improvements."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4 class="author-name">Michael Chen</h4>
+                                <p class="author-title">Head of Innovation, GlobalFinance Ltd</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p class="testimonial-text">"Working with Miisol on our DevSecOps transformation was exceptional. Their security-first approach and automated pipelines gave us confidence to deploy daily."</p>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h4 class="author-name">Emma Thompson</h4>
+                                <p class="author-title">Head of Security, DataTech Industries</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Us Section -->
+        <section class="contact-section" id="contact">
+            <div class="section-tag">Get In Touch</div>
+            
+            <h2 class="section-title">Start Your Technology Transformation</h2>
+            <p class="section-subtitle">Ready to elevate your technology strategy? Let's discuss your requirements and objectives.</p>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <polyline points="22,6 12,13 2,6"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <span class="contact-label">Email</span>
+                            <a href="mailto:connect@miisol.net" class="contact-value">connect@miisol.net</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <span class="contact-label">Phone</span>
+                            <a href="tel:+447946988205" class="contact-value">+44 7946 988205</a>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="10" r="3"/>
+                                <path d="M12 21.7C17.3 17 20 13 20 10a8 8 0 1 0-16 0c0 3 2.7 6.9 8 11.7z"/>
+                            </svg>
+                        </div>
+                        <div class="contact-details">
+                            <span class="contact-label">Location</span>
+                            <span class="contact-value">London, United Kingdom</span>
+                        </div>
+                    </div>
+                </div>
+                
+					<div class="contact-form">
+						<form class="form" action="https://formspree.io/f/xqalnwzn" method="POST">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company">Company/Organisation</label>
+                            <input type="text" id="company" name="company">
+                        </div>
+                        
+							<div class="form-group">
+								<label for="requirements">Project Requirements *</label>
+								<textarea id="requirements" name="message" rows="4" placeholder="Tell us about your technology requirements, challenges, or transformation goals..." required></textarea>
+							</div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <span>Send Message</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <div class="footer-logo">
+                            <img src="assets/images/white-logo-no-background.svg" alt="Miisol Logo" class="footer-logo-img">
+                        </div>
+                        <p class="footer-description">Professional technology consulting for modern enterprises. We deliver strategic guidance, expert implementation, and ongoing support for your digital transformation journey.</p>
+                        <div class="footer-contact">
+                            <a href="mailto:connect@miisol.net">connect@miisol.net</a>
+                            <a href="tel:+447946988205">+44 7946 988205</a>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-links">
+                        <div class="footer-column">
+                            <h4>Quick Links</h4>
+                            <ul>
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#what-we-do">Solutions</a></li>
+                                <li><a href="#technologies">Technologies</a></li>
+                                <li><a href="#ai-platform">AI Platform</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="footer-column">
+                            <h4>Expertise</h4>
+                            <ul>
+                                <li><a href="#ai-ml" class="disabled-link" aria-disabled="true" tabindex="-1">AI & Machine Learning</a></li>
+                                <li><a href="#cloud-architecture" class="disabled-link" aria-disabled="true" tabindex="-1">Cloud-Native Architecture</a></li>
+                                <li><a href="#devsecops" class="disabled-link" aria-disabled="true" tabindex="-1">DevSecOps Implementation</a></li>
+                                <li><a href="#digital-transformation" class="disabled-link" aria-disabled="true" tabindex="-1">Digital Transformation</a></li>
+                                <li><a href="#tech-leadership" class="disabled-link" aria-disabled="true" tabindex="-1">Technical Leadership</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-bottom">
+                    <div class="footer-legal">
+                        <span>&copy; 2024 Miisol Ltd. All rights reserved.</span>
+                        <div class="legal-links">
+                                <a href="#privacy" class="disabled-link" aria-disabled="true" tabindex="-1">Privacy Policy</a>
+                                <a href="#terms" class="disabled-link" aria-disabled="true" tabindex="-1">Terms of Service</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
 </html>
