@@ -382,7 +382,7 @@ class CardFlip {
         const backTitle = this.container.querySelector('.back-title');
         const backDescription = this.container.querySelector('.description');
         
-        if (backTitle) backTitle.textContent = this.options.title;
+        if (backTitle) backTitle.style.display = 'none'; // Hide duplicate title
         if (backDescription) backDescription.textContent = this.options.description;
     }
 
@@ -500,45 +500,45 @@ function initializeFlipCards() {
     const cardConfigs = [
         {
             id: 'cardFlip1',
-            title: 'Artificial Intelligence & ML',
-            subtitle: 'Advanced AI and machine learning solutions',
-            description: 'Build intelligent systems with cutting-edge AI and ML technologies for automation, prediction, and data-driven insights.',
-            features: ['TensorFlow', 'PyTorch', 'OpenAI GPT', 'Hugging Face', 'Scikit-learn', 'MLflow']
+            title: 'AI & Machine Learning',
+            subtitle: 'Intelligent automation and predictive analytics',
+            description: 'Advanced AI systems with LLMs, agentic frameworks, and modern standards for intelligent automation.',
+            features: ['LangGraph & AutoGen', 'MCP & A2A', 'LLM Integration', 'Agentic AI']
         },
         {
             id: 'cardFlip2',
-            title: 'Cloud Platforms & Infrastructure',
-            subtitle: 'Scalable cloud architecture and deployment',
-            description: 'Design and deploy robust cloud infrastructure with industry-leading platforms and container orchestration.',
-            features: ['AWS', 'Azure', 'Google Cloud', 'Kubernetes', 'Docker', 'Terraform']
+            title: 'Cloud-Native Systems',
+            subtitle: 'Scalable microservices and container orchestration',
+            description: 'Modern cloud architectures with Kubernetes, containerization, and CNCF-compliant solutions.',
+            features: ['Public Cloud', 'Private Cloud', 'Hybrid Cloud', 'Kubernetes', 'Containerization', 'CNCF']
         },
         {
             id: 'cardFlip3',
-            title: 'Modern Development Stack',
-            subtitle: 'Full-stack development with modern technologies',
-            description: 'Build modern applications with the latest frameworks and programming languages for optimal performance.',
-            features: ['Python', 'Node.js', 'Next.js', 'React', 'Go', 'GraphQL']
+            title: 'Modern Development',
+            subtitle: 'Full-stack development with cutting-edge technologies',
+            description: 'API-first architecture, microservices, and serverless computing for high-performance applications.',
+            features: ['Python', 'Node.js', 'Next.js', 'React', 'Supabase', 'Vercel']
         },
         {
             id: 'cardFlip4',
-            title: 'DevSecOps & Automation',
-            subtitle: 'Automated CI/CD and security integration',
-            description: 'Implement secure development practices with automated testing, deployment, and continuous integration pipelines.',
+            title: 'DevOps & SecOps',
+            subtitle: 'Automated CI/CD pipelines and security integration',
+            description: 'Automated pipelines, Infrastructure as Code, and GitOps workflows for secure deployments.',
             features: ['Jenkins', 'GitLab CI', 'GitHub Actions', 'ArgoCD', 'Helm', 'Ansible']
         },
         {
             id: 'cardFlip5',
             title: 'Monitoring & Security',
-            subtitle: 'Comprehensive monitoring and security solutions',
-            description: 'Ensure system reliability and security with comprehensive monitoring, logging, and security tools.',
+            subtitle: 'Comprehensive observability and security solutions',
+            description: 'Enterprise observability, security monitoring, and compliance frameworks for production systems.',
             features: ['Prometheus', 'Grafana', 'ELK Stack', 'SonarQube', 'Vault', 'Istio']
         },
         {
             id: 'cardFlip6',
-            title: 'Data & Analytics',
-            subtitle: 'Big data processing and analytics platform',
-            description: 'Process and analyze large datasets with modern data engineering tools and analytics platforms.',
-            features: ['Apache Spark', 'Kafka', 'Snowflake', 'Databricks', 'dbt', 'Airflow']
+            title: 'Green IT & Sustainability',
+            subtitle: 'Sustainable technology and energy-efficient solutions',
+            description: 'Carbon-efficient computing, sustainable architecture, and ESG compliance for responsible technology.',
+            features: ['Carbon Monitoring', 'Energy Efficiency', 'Sustainable Design', 'ESG Compliance']
         }
     ];
 
