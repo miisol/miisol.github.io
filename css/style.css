@@ -1094,6 +1094,39 @@ body {
     transition-delay: calc(var(--speed) * 0.25);
 }
 
+/* Tech tags styling for tech-solutions-section */
+.tech-solutions-section .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 16px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all calc(var(--speed) * 1.2) var(--easing);
+    pointer-events: none;
+}
+
+.tech-solutions-section [data-active='true'] .tech-tags {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+    transition-delay: calc(var(--speed) * 0.4);
+}
+
+.tech-solutions-section .tech-tag {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 4px 12px;
+    border-radius: 16px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px rgba(5, 114, 171, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
 .tech-solutions-section article {
     width: calc(var(--article-width) * 1px);
     height: 100%;
