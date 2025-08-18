@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
     const body = document.body;
 
     if (mobileMenuToggle && mobileMenu) {
@@ -18,8 +19,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
 
+        const closeMenu = () => {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            body.style.overflow = '';
+        };
+
         // Click event for desktop
         mobileMenuToggle.addEventListener('click', toggleMenu);
+        
+        // Mobile menu close button event
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', closeMenu);
+            mobileMenuClose.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                closeMenu();
+            });
+        }
         
         // Touch events for mobile
         mobileMenuToggle.addEventListener('touchstart', function(e) {
@@ -38,27 +54,21 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenuToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                body.style.overflow = '';
+                closeMenu();
             }
         });
 
         // Close mobile menu when window is resized to desktop size
         window.addEventListener('resize', function() {
             if (window.innerWidth > 768) {
-                mobileMenuToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                body.style.overflow = '';
+                closeMenu();
             }
         });
         
         // Close mobile menu on escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-                mobileMenuToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                body.style.overflow = '';
+                closeMenu();
                 mobileMenuToggle.focus();
             }
         });
@@ -250,7 +260,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (techSectionList) {
         const techItems = techSectionList.querySelectorAll('li');
 
+        // Check if we're on mobile/touch device
+        const isMobile = window.innerWidth <= 480 || 'ontouchstart' in window;
+
         const setIndex = (event) => {
+            // Disable interaction on mobile devices
+            if (isMobile) {
+                return;
+            }
+            
             const closest = event.target.closest('li');
             if (closest) {
                 const index = [...techItems].indexOf(closest);
@@ -265,9 +283,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        techSectionList.addEventListener('focus', setIndex, true);
-        techSectionList.addEventListener('click', setIndex);
-        techSectionList.addEventListener('pointermove', setIndex);
+        // Only add desktop interactions if not mobile
+        if (!isMobile) {
+            techSectionList.addEventListener('focus', setIndex, true);
+            techSectionList.addEventListener('click', setIndex);
+            techSectionList.addEventListener('pointermove', setIndex);
+        }
 
         const resync = () => {
             const w = Math.max(
@@ -524,14 +545,14 @@ function initializeFlipCards() {
             title: 'DevOps & SecOps',
             subtitle: 'Automated CI/CD pipelines and security integration',
             description: 'Automated pipelines, Infrastructure as Code, and GitOps workflows for secure deployments.',
-            features: ['Jenkins', 'GitLab CI', 'GitHub Actions', 'ArgoCD', 'Helm', 'Ansible']
+            features: ['Jenkins', 'GitLab CI', 'GitHub Actions', 'GitOps', 'Helm', 'Ansible']
         },
         {
             id: 'cardFlip5',
             title: 'Monitoring & Security',
             subtitle: 'Comprehensive observability and security solutions',
             description: 'Enterprise observability, security monitoring, and compliance frameworks for production systems.',
-            features: ['Prometheus', 'Grafana', 'ELK Stack', 'SonarQube', 'Vault', 'Istio']
+            features: ['Prometheus', 'Grafana', 'ELK Stack', 'OpenTelemetry', 'SonarQube', 'Vault', 'Istio']
         },
         {
             id: 'cardFlip6',
@@ -984,4 +1005,146 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 250);
         });
     }
+
+    // Initialize AI Products Tab System
+    initializeTabSystem();
 });
+
+// =====================================
+// AI Products Tab System
+// =====================================
+
+function initializeTabSystem() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    if (tabButtons.length === 0 || tabContents.length === 0) {
+        return; // Exit if no tabs found
+    }
+
+    // Tab switching function
+    function switchTab(targetTab) {
+        // Remove active class from all buttons and contents
+        tabButtons.forEach(btn => {
+            btn.classList.remove('active');
+            btn.setAttribute('aria-selected', 'false');
+        });
+        
+        tabContents.forEach(content => {
+            content.classList.remove('active');
+        });
+
+        // Add active class to target button and content
+        const targetButton = document.querySelector(`[data-tab="${targetTab}"]`);
+        const targetContent = document.getElementById(`${targetTab}-content`);
+        
+        if (targetButton && targetContent) {
+            targetButton.classList.add('active');
+            targetButton.setAttribute('aria-selected', 'true');
+            targetContent.classList.add('active');
+            
+            // Trigger content animation
+            setTimeout(() => {
+                targetContent.style.opacity = '1';
+                targetContent.style.transform = 'translateY(0)';
+            }, 50);
+        }
+    }
+
+    // Add click event listeners to tab buttons
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const tabName = this.getAttribute('data-tab');
+            switchTab(tabName);
+            
+            // Add ripple effect
+            createRippleEffect(this, event);
+            
+            // Update URL hash (optional)
+            history.pushState(null, null, '#ai-platform');
+        });
+
+        // Add keyboard support
+        button.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                this.click();
+            }
+        });
+    });
+
+    // Check URL hash and activate appropriate tab
+    function checkInitialTab() {
+        const hash = window.location.hash;
+        
+        // Handle legacy Azure DevOps direct link
+        if (hash === '#azure-devops-agent') {
+            setTimeout(() => {
+                switchTab('azure-agent');
+            }, 100);
+            return;
+        }
+        
+        // Default to first tab
+        if (tabButtons.length > 0) {
+            const firstTab = tabButtons[0].getAttribute('data-tab');
+            switchTab(firstTab);
+        }
+    }
+
+    // Initialize with appropriate tab
+    checkInitialTab();
+
+    // Listen for hash changes
+    window.addEventListener('hashchange', function() {
+        if (window.location.hash === '#azure-devops-agent') {
+            switchTab('azure-agent');
+        }
+    });
+}
+
+// Enhanced ripple effect for tabs
+function createRippleEffect(element, event) {
+    const rect = element.getBoundingClientRect();
+    const ripple = document.createElement('span');
+    const size = Math.max(rect.width, rect.height);
+    const x = event.clientX - rect.left - size / 2;
+    const y = event.clientY - rect.top - size / 2;
+    
+    ripple.style.cssText = `
+        position: absolute;
+        width: ${size}px;
+        height: ${size}px;
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 50%;
+        transform: scale(0);
+        animation: tabRipple 0.6s ease-out;
+        left: ${x}px;
+        top: ${y}px;
+        pointer-events: none;
+        z-index: 1000;
+    `;
+    
+    // Add ripple animation CSS if not already present
+    if (!document.getElementById('tab-ripple-style')) {
+        const style = document.createElement('style');
+        style.id = 'tab-ripple-style';
+        style.textContent = `
+            @keyframes tabRipple {
+                to {
+                    transform: scale(2);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    }
+    
+    element.style.position = 'relative';
+    element.style.overflow = 'hidden';
+    element.appendChild(ripple);
+    
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+}
