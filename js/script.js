@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
     const mobileMenu = document.querySelector('.mobile-menu');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
     const body = document.body;
 
     if (mobileMenuToggle && mobileMenu) {
@@ -18,8 +19,23 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
 
+        const closeMenu = () => {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            body.style.overflow = '';
+        };
+
         // Click event for desktop
         mobileMenuToggle.addEventListener('click', toggleMenu);
+        
+        // Mobile menu close button event
+        if (mobileMenuClose) {
+            mobileMenuClose.addEventListener('click', closeMenu);
+            mobileMenuClose.addEventListener('touchend', function(e) {
+                e.preventDefault();
+                closeMenu();
+            });
+        }
         
         // Touch events for mobile
         mobileMenuToggle.addEventListener('touchstart', function(e) {
@@ -38,27 +54,21 @@ document.addEventListener('DOMContentLoaded', function() {
         // Close mobile menu when clicking outside
         document.addEventListener('click', function(e) {
             if (!mobileMenuToggle.contains(e.target) && !mobileMenu.contains(e.target)) {
-                mobileMenuToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                body.style.overflow = '';
+                closeMenu();
             }
         });
 
         // Close mobile menu when window is resized to desktop size
         window.addEventListener('resize', function() {
             if (window.innerWidth > 768) {
-                mobileMenuToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                body.style.overflow = '';
+                closeMenu();
             }
         });
         
         // Close mobile menu on escape key
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
-                mobileMenuToggle.classList.remove('active');
-                mobileMenu.classList.remove('active');
-                body.style.overflow = '';
+                closeMenu();
                 mobileMenuToggle.focus();
             }
         });
@@ -117,6 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
         '#what-we-do',
         '#technologies',
         '#ai-platform',
+        '#azure-devops-agent',
         '#contact'
     ].map(hash => ({ hash, el: document.querySelector(hash) })).filter(s => s.el);
 
@@ -250,7 +261,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (techSectionList) {
         const techItems = techSectionList.querySelectorAll('li');
 
+        // Check if we're on mobile/touch device
+        const isMobile = window.innerWidth <= 480 || 'ontouchstart' in window;
+
         const setIndex = (event) => {
+            // Disable interaction on mobile devices
+            if (isMobile) {
+                return;
+            }
+            
             const closest = event.target.closest('li');
             if (closest) {
                 const index = [...techItems].indexOf(closest);
@@ -265,9 +284,12 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        techSectionList.addEventListener('focus', setIndex, true);
-        techSectionList.addEventListener('click', setIndex);
-        techSectionList.addEventListener('pointermove', setIndex);
+        // Only add desktop interactions if not mobile
+        if (!isMobile) {
+            techSectionList.addEventListener('focus', setIndex, true);
+            techSectionList.addEventListener('click', setIndex);
+            techSectionList.addEventListener('pointermove', setIndex);
+        }
 
         const resync = () => {
             const w = Math.max(
@@ -531,7 +553,7 @@ function initializeFlipCards() {
             title: 'Monitoring & Security',
             subtitle: 'Comprehensive observability and security solutions',
             description: 'Enterprise observability, security monitoring, and compliance frameworks for production systems.',
-            features: ['Prometheus', 'Grafana', 'ELK Stack', 'SonarQube', 'Vault', 'Istio']
+            features: ['Prometheus', 'Grafana', 'ELK Stack', 'OpenTelemetry', 'SonarQube', 'Vault', 'Istio']
         },
         {
             id: 'cardFlip6',
