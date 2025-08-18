@@ -4722,3 +4722,497 @@ button.learn-more .circle .icon.arrow::before {
 .testimonials { background: var(--bg-secondary); }
 .contact { background: var(--bg-secondary); }
 .consulting-approach { background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); }
+
+/* =====================================
+   AI Products Tab System Styles
+   ===================================== */
+
+/* AI Products Section */
+.ai-products-section {
+    padding: 100px 0;
+    background: var(--bg-dark);  /* #111827 - Dark background like original AI Discovery */
+    color: white;
+    min-height: 100vh;
+}
+
+.products-header {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.products-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.products-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Tab Navigation */
+.tabs-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.tabs-nav {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 50px;
+    padding: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    flex-wrap: wrap;
+}
+
+.tab-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 16px 28px;
+    background: transparent;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.7);
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+    justify-content: center;
+}
+
+.tab-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--gradient-primary);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    border-radius: 16px;
+}
+
+.tab-button.active::before {
+    opacity: 1;
+}
+
+.tab-button.active {
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(5, 114, 171, 0.3);
+}
+
+.tab-button:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+}
+
+.tab-icon,
+.tab-text {
+    position: relative;
+    z-index: 1;
+}
+
+.tab-icon {
+    font-size: 1.2rem;
+}
+
+.tab-text {
+    font-weight: 600;
+}
+
+/* Tab Content */
+.tab-contents {
+    position: relative;
+}
+
+.tab-content {
+    display: none;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.tab-content.active {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Tab Design */
+@media (max-width: 768px) {
+    .tabs-nav {
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px;
+    }
+    
+    .tab-button {
+        padding: 20px 24px;
+        min-width: unset;
+        flex: none;
+    }
+    
+    .tab-text {
+        font-size: 1rem;
+    }
+    
+    .products-header {
+        margin-bottom: 40px;
+    }
+    
+    .ai-products-section {
+        padding: 60px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-button {
+        padding: 18px 20px;
+        gap: 8px;
+    }
+    
+    .tab-icon {
+        font-size: 1.1rem;
+    }
+    
+    .tab-text {
+        font-size: 0.95rem;
+    }
+}
+
+/* Content Area Styling */
+.discovery-content,
+.azure-agent-content {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ensure existing AI Discovery and Azure Agent styles work within tabs */
+.ai-products-section .discovery-header,
+.ai-products-section .agent-header {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;
+}
+
+.ai-products-section .discovery-title,
+.ai-products-section .agent-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.ai-products-section .discovery-subtitle,
+.ai-products-section .agent-subtitle {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.ai-products-section .discovery-description,
+.ai-products-section .agent-description {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* Responsive adjustments for tab content */
+@media (max-width: 768px) {
+    .ai-products-section .discovery-header,
+    .ai-products-section .agent-header {
+        margin-bottom: 40px;
+    }
+    
+    .ai-products-section .discovery-title,
+    .ai-products-section .agent-title {
+        font-size: 2rem;
+    }
+}
+
+/* Hidden section styling */
+.azure-agent-section-hidden {
+    display: none !important;
+}
+
+/* Fix Platform Access Button Positioning */
+.ai-products-section .discovery-cta {
+    text-align: center;
+    margin-top: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.ai-products-section .agent-cta {
+    text-align: center;
+    margin-top: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Ensure all text in AI Products section is white */
+.ai-products-section p,
+.ai-products-section .discovery-tag,
+.ai-products-section .agent-tag {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.ai-products-section .discovery-tag,
+.ai-products-section .agent-tag {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Azure DevOps AI Agent Dark Theme Overrides */
+.ai-products-section .highlights-banner-single {
+    margin: 80px auto;
+}
+
+.ai-products-section .highlights-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+}
+
+.ai-products-section .highlight-title {
+    color: white;
+    font-weight: 600;
+}
+
+.ai-products-section .highlight-desc {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.ai-products-section .highlight-icon {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ai-products-section .highlight-divider {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.ai-products-section .features-section-title,
+.ai-products-section .tech-stack-title,
+.ai-products-section .use-cases-title,
+.ai-products-section .categories-title {
+    color: white;
+    font-weight: 700;
+}
+
+.ai-products-section .agent-feature-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.ai-products-section .agent-feature-content {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.ai-products-section .agent-feature-content:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+}
+
+.ai-products-section .agent-feature-inner {
+    color: white;
+}
+
+.ai-products-section .agent-feature-title {
+    color: white;
+    font-weight: 600;
+}
+
+.ai-products-section .agent-feature-description {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.ai-products-section .agent-feature-footer {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.ai-products-section .agent-footer-text {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.ai-products-section .agent-icon-container {
+    background: var(--gradient-primary);
+    border: none;
+    box-shadow: 0 4px 15px rgba(5, 114, 171, 0.3);
+}
+
+.ai-products-section .agent-icon {
+    stroke: white;
+    color: white;
+    stroke-width: 2;
+    fill: none;
+}
+
+.ai-products-section .tech-stack-modern-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.ai-products-section .stack-card-title {
+    color: white;
+    font-weight: 600;
+}
+
+.ai-products-section .stack-card-description {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.ai-products-section .stack-modern-item {
+    background: rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.ai-products-section .stack-icon {
+    stroke: white;
+    color: white;
+    stroke-width: 2;
+    fill: none;
+}
+
+.ai-products-section .use-case-bento-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.ai-products-section .use-case-bento-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Agent Access Button - same styling as Platform Access Button */
+.ai-products-section .agent-access-btn {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    color: white;
+}
+
+.ai-products-section .agent-access-btn .circle {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: relative;
+    display: block;
+    margin: 0;
+    width: 3rem;
+    height: 3rem;
+    background: var(--primary-color);
+    border-radius: 1.625rem;
+}
+
+.ai-products-section .agent-access-btn .circle .icon {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #fff;
+}
+
+.ai-products-section .agent-access-btn .circle .icon.arrow {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    left: 0.625rem;
+    width: 1.125rem;
+    height: 0.125rem;
+    background: none;
+}
+
+.ai-products-section .agent-access-btn .circle .icon.arrow::before {
+    position: absolute;
+    content: "";
+    top: -0.29rem;
+    right: 0.0625rem;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-top: 0.125rem solid #fff;
+    border-right: 0.125rem solid #fff;
+    transform: rotate(45deg);
+}
+
+.ai-products-section .agent-access-btn .button-text {
+    transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.75rem 0;
+    margin: 0 0 0 1.85rem;
+    color: #000;
+    font-weight: 700;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.ai-products-section .agent-access-btn:hover .circle {
+    width: 100%;
+}
+
+.ai-products-section .agent-access-btn:hover .circle .icon.arrow {
+    background: #fff;
+    transform: translate(1rem, 0);
+}
+
+.ai-products-section .agent-access-btn:hover .button-text {
+    color: #fff;
+}
