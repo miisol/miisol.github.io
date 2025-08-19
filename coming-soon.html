@@ -246,9 +246,9 @@
         
         <div class="coming-soon-badge">Coming Soon</div>
         
-        <h1>AI Discovery Platform</h1>
+        <h1 id="main-heading">AI Discovery Platform</h1>
         
-        <p>We're working on something amazing! Our AI Discovery Platform will be launching soon. Stay tuned for updates.</p>
+        <p id="main-description">We're working on something amazing! Our AI Discovery Platform will be launching soon. Stay tuned for updates.</p>
         
         <button class="back-button" onclick="window.history.back()">
             <span class="circle" aria-hidden="true">
@@ -257,5 +257,25 @@
             <span class="button-text">Go Back</span>
         </button>
     </div>
+
+    <script>
+        // Check if the page was accessed from Cloud DevOps AI Agent section
+        function checkSource() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const source = urlParams.get('source');
+            
+            if (source === 'cloud-devops-agent') {
+                // Update heading and description for Cloud DevOps AI Agent
+                document.getElementById('main-heading').textContent = 'Cloud DevOps AI Agent';
+                document.getElementById('main-description').textContent = 'We\'re working on something amazing! Our Cloud DevOps AI Agent will be launching soon. This intelligent agent will revolutionize infrastructure provisioning by converting plain English requirements into validated Terraform code. Stay tuned for updates.';
+                
+                // Update page title
+                document.title = 'Coming Soon - Cloud DevOps AI Agent';
+            }
+        }
+        
+        // Run when page loads
+        document.addEventListener('DOMContentLoaded', checkSource);
+    </script>
 </body>
 </html>

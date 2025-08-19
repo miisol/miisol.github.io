@@ -85,8 +85,66 @@ document.addEventListener('DOMContentLoaded', function() {
 // Smooth scroll for navigation links (both desktop and mobile)
 document.querySelectorAll('.nav-links a, .mobile-nav-links a').forEach(link => {
     link.addEventListener('click', function(e) {
-        e.preventDefault();
         const targetId = this.getAttribute('href');
+        
+        // Handle special tab system links - let them use hash navigation
+        if (targetId === '#cloud-devops-agent' || targetId === '#ai-platform') {
+            e.preventDefault();
+            console.log('Navbar link clicked for tab system:', targetId);
+            
+            // First scroll to the AI platform section
+            const aiPlatformSection = document.querySelector('#ai-platform');
+            if (aiPlatformSection) {
+                aiPlatformSection.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+            
+            // Set the hash and trigger tab switching
+            window.location.hash = targetId;
+            console.log('Hash set to:', window.location.hash);
+            
+            // Manually trigger the tab switch since hash change might not work immediately
+            if (targetId === '#cloud-devops-agent') {
+                setTimeout(() => {
+                    console.log('Manually triggering azure-agent tab switch');
+                    const tabSystemInitialized = document.querySelector('.tab-button[data-tab="azure-agent"]');
+                    if (tabSystemInitialized) {
+                        // Call the switchTab function if available
+                        if (typeof window.switchTabManually === 'function') {
+                            window.switchTabManually('azure-agent');
+                        }
+                    }
+                }, 500);
+            } else if (targetId === '#ai-platform') {
+                setTimeout(() => {
+                    console.log('Manually triggering discovery tab switch');
+                    const tabSystemInitialized = document.querySelector('.tab-button[data-tab="discovery"]');
+                    if (tabSystemInitialized) {
+                        // Call the switchTab function if available
+                        if (typeof window.switchTabManually === 'function') {
+                            window.switchTabManually('discovery');
+                        }
+                    }
+                }, 500);
+            }
+            
+            // Set active state on click
+            setActiveNavLink(targetId);
+
+            // Close mobile menu when a link is clicked
+            const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            if (mobileMenuToggle && mobileMenu) {
+                mobileMenuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+            return;
+        }
+        
+        // For other links, use smooth scroll
+        e.preventDefault();
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
@@ -758,8 +816,18 @@ document.querySelectorAll('.footer-column a').forEach(link => {
             e.preventDefault();
             return;
         }
-        e.preventDefault();
+        
         const targetId = this.getAttribute('href');
+        
+        // Handle special tab system links - let them use hash navigation
+        if (targetId === '#cloud-devops-agent' || targetId === '#ai-platform') {
+            // Allow default hash navigation for tab system
+            window.location.hash = targetId;
+            return;
+        }
+        
+        // For other links, use smooth scroll
+        e.preventDefault();
         const targetElement = document.querySelector(targetId);
         
         if (targetElement) {
@@ -1015,15 +1083,22 @@ document.addEventListener('DOMContentLoaded', function() {
 // =====================================
 
 function initializeTabSystem() {
+    console.log('Initializing tab system...');
     const tabButtons = document.querySelectorAll('.tab-button');
     const tabContents = document.querySelectorAll('.tab-content');
     
+    console.log('Found tab buttons:', tabButtons.length);
+    console.log('Found tab contents:', tabContents.length);
+    
     if (tabButtons.length === 0 || tabContents.length === 0) {
+        console.log('No tabs found, exiting tab system initialization');
         return; // Exit if no tabs found
     }
 
     // Tab switching function
     function switchTab(targetTab) {
+        console.log('Switching to tab:', targetTab);
+        
         // Remove active class from all buttons and contents
         tabButtons.forEach(btn => {
             btn.classList.remove('active');
@@ -1038,6 +1113,9 @@ function initializeTabSystem() {
         const targetButton = document.querySelector(`[data-tab="${targetTab}"]`);
         const targetContent = document.getElementById(`${targetTab}-content`);
         
+        console.log('Target button found:', !!targetButton);
+        console.log('Target content found:', !!targetContent);
+        
         if (targetButton && targetContent) {
             targetButton.classList.add('active');
             targetButton.setAttribute('aria-selected', 'true');
@@ -1048,8 +1126,14 @@ function initializeTabSystem() {
                 targetContent.style.opacity = '1';
                 targetContent.style.transform = 'translateY(0)';
             }, 50);
+            console.log('Tab switch completed successfully');
+        } else {
+            console.log('Could not find target button or content for tab:', targetTab);
         }
     }
+    
+    // Expose switchTab function globally for navbar access
+    window.switchTabManually = switchTab;
 
     // Add click event listeners to tab buttons
     tabButtons.forEach(button => {
@@ -1076,11 +1160,31 @@ function initializeTabSystem() {
     // Check URL hash and activate appropriate tab
     function checkInitialTab() {
         const hash = window.location.hash;
+        console.log('checkInitialTab called with hash:', hash);
+        
+        // Handle Cloud DevOps AI Agent direct link
+        if (hash === '#cloud-devops-agent') {
+            console.log('Detected cloud-devops-agent hash, switching to azure-agent tab');
+            setTimeout(() => {
+                switchTab('azure-agent');
+            }, 100);
+            return;
+        }
         
         // Handle legacy Azure DevOps direct link
         if (hash === '#azure-devops-agent') {
+            console.log('Detected azure-devops-agent hash, switching to azure-agent tab');
             setTimeout(() => {
                 switchTab('azure-agent');
+            }, 100);
+            return;
+        }
+        
+        // Handle AI Platform link - default to discovery tab
+        if (hash === '#ai-platform') {
+            console.log('Detected ai-platform hash, switching to discovery tab');
+            setTimeout(() => {
+                switchTab('discovery');
             }, 100);
             return;
         }
@@ -1088,6 +1192,7 @@ function initializeTabSystem() {
         // Default to first tab
         if (tabButtons.length > 0) {
             const firstTab = tabButtons[0].getAttribute('data-tab');
+            console.log('No specific hash detected, using default tab:', firstTab);
             switchTab(firstTab);
         }
     }
@@ -1097,8 +1202,12 @@ function initializeTabSystem() {
 
     // Listen for hash changes
     window.addEventListener('hashchange', function() {
-        if (window.location.hash === '#azure-devops-agent') {
+        const hash = window.location.hash;
+        
+        if (hash === '#cloud-devops-agent' || hash === '#azure-devops-agent') {
             switchTab('azure-agent');
+        } else if (hash === '#ai-platform') {
+            switchTab('discovery');
         }
     });
 }

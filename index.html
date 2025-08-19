@@ -407,8 +407,58 @@
       <!-- Statistics Section -->
       <section class="stats-section">
         <div class="stats-container">
-          <div class="design-card">
-            <h2>Discover<br />Design<br />Develop<br />Deploy</h2>
+          <div class="design-card" id="designCard">
+            <!-- Base background image -->
+            <div class="base-background"></div>
+            
+            <!-- Dynamic background -->
+            <div class="dynamic-background" id="dynamicBackground"></div>
+            
+            <!-- Ice glass effect overlay -->
+            <div class="ice-glass-overlay" id="iceGlassOverlay"></div>
+            
+            <!-- Dark overlay -->
+            <div class="dark-overlay"></div>
+            
+            <!-- Content -->
+            <div class="content">
+              <div class="text-center">
+                <div class="section" data-section="0">
+                  <h2 class="section-title">
+                    <span class="title-text">Discover</span>
+                    <div class="ice-sliding-effect"></div>
+                  </h2>
+                  <div class="hover-indicator"></div>
+                </div>
+                <div class="section" data-section="1">
+                  <h2 class="section-title">
+                    <span class="title-text">Design</span>
+                    <div class="ice-sliding-effect"></div>
+                  </h2>
+                  <div class="hover-indicator"></div>
+                </div>
+                <div class="section" data-section="2">
+                  <h2 class="section-title">
+                    <span class="title-text">Develop</span>
+                    <div class="ice-sliding-effect"></div>
+                  </h2>
+                  <div class="hover-indicator"></div>
+                </div>
+                <div class="section" data-section="3">
+                  <h2 class="section-title">
+                    <span class="title-text">Deploy</span>
+                    <div class="ice-sliding-effect"></div>
+                  </h2>
+                  <div class="hover-indicator"></div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Frosted glass border effect -->
+            <div class="frosted-border"></div>
+            
+            <!-- Glass reflection -->
+            <div class="glass-reflection"></div>
           </div>
 
           <div class="stats-grid">
@@ -1340,10 +1390,7 @@
                       <div class="agent-feature-content">
                         <div class="agent-feature-inner">
                           <div class="agent-icon-container">
-                            <svg class="agent-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                              <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"></path>
-                              <polyline points="14,2 14,8 20,8"></polyline>
-                            </svg>
+                            <img class="agent-icon" src="https://unpkg.com/lucide-static@latest/icons/server-cog.svg" alt="Infrastructure as Code icon" style="filter: brightness(0) invert(1);" />
                           </div>
                           <h4 class="agent-feature-title">Infrastructure as Code</h4>
                           <p class="agent-feature-description">
@@ -1421,9 +1468,7 @@
                       <div class="agent-feature-content">
                         <div class="agent-feature-inner">
                           <div class="agent-icon-container">
-                            <svg class="agent-icon" viewBox="0 0 24 24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                              <path d="M2 20h20l-10-18z"></path>
-                            </svg>
+                            <img class="agent-icon" src="https://unpkg.com/lucide-static@latest/icons/landmark.svg" alt="Advanced Architecture icon" style="filter: brightness(0) invert(1);" />
                           </div>
                           <h4 class="agent-feature-title">Advanced Architecture</h4>
                           <p class="agent-feature-description">
@@ -1456,7 +1501,7 @@
 
                 <!-- CTA Section -->
                 <div class="agent-cta">
-                  <a href="coming-soon.html" class="platform-access-btn">
+                  <a href="coming-soon.html?source=cloud-devops-agent" class="platform-access-btn">
                     <span class="circle" aria-hidden="true">
                       <span class="icon arrow"></span>
                     </span>
@@ -1472,17 +1517,7 @@
       <!-- Hidden section to maintain anchor compatibility -->
       <section class="azure-agent-section-hidden" id="cloud-devops-agent" style="display: none;">
         <!-- This section is hidden and content moved to tabs above -->
-        <script>
-          // Redirect anchor links to the tab system
-          if (window.location.hash === '#cloud-devops-agent') {
-            window.location.hash = '#ai-platform';
-            // Activate Cloud DevOps Agent tab after redirect
-            setTimeout(() => {
-              const azureTab = document.querySelector('[data-tab="azure-agent"]');
-              if (azureTab) azureTab.click();
-            }, 100);
-          }
-        </script>
+        <!-- Navigation handled by main script.js -->
       </section>
 
       <!-- Testimonials Section -->
@@ -1784,5 +1819,6 @@
     </div>
 
     <script src="js/script.js"></script>
+    <script src="js/design-card.js"></script>
   </body>
 </html>
