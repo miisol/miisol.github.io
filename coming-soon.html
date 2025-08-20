@@ -314,7 +314,7 @@
 
         .cta-primary, .cta-secondary {
             padding: 14px 28px;
-            border-radius: 8px;
+            border-radius: 50px;
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
@@ -516,6 +516,189 @@
             content: '🔧';
             font-size: 16px;
         }
+
+        /* Logo Cloud Section Styles */
+        .logo-cloud-section {
+            width: 100%;
+            padding: 4rem 0 6rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-cloud-wrapper {
+            margin: 0 auto;
+            max-width: 42rem;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 3;
+        }
+
+        .logo-cloud-title {
+            text-align: center;
+            font-size: clamp(1.5rem, 4vw, 1.875rem);
+            line-height: 1.2;
+            color: white;
+            margin-bottom: 3.5rem;
+            font-weight: 700;
+        }
+
+        .logo-cloud-title .highlight {
+            color: #0572ab;
+            background: linear-gradient(135deg, #0572ab 0%, #4285f4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .logos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            align-items: center;
+            justify-items: center;
+            margin-bottom: 2rem;
+            padding: 0 1rem;
+        }
+
+        .cloud-provider-icon {
+            width: auto;
+            height: auto;
+            max-height: 50px;
+            max-width: 120px;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            filter: brightness(1);
+            transform: scale(1);
+            will-change: transform, filter;
+        }
+
+        .cloud-provider-icon:hover {
+            opacity: 1;
+            transform: scale(1.05);
+            filter: brightness(1.2);
+        }
+
+        /* Specific styling for Google Cloud logo */
+        .cloud-provider-icon.gcp-logo {
+            max-height: 120px !important;
+            max-width: 200px !important;
+            width: auto !important;
+        }
+
+        .sparkles-container {
+            position: relative;
+            margin-top: -6rem;
+            height: 28rem;
+            width: 100vw;
+            left: 50%;
+            transform: translateX(-50%);
+            overflow: hidden;
+            -webkit-mask-image: radial-gradient(60% 60%, white, transparent);
+            mask-image: radial-gradient(60% 60%, white, transparent);
+        }
+
+        .sparkles-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1), transparent 60%);
+            opacity: 0.3;
+        }
+
+        .sparkles-container::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: -50%;
+            aspect-ratio: 1/0.7;
+            width: 200%;
+            border-radius: 100%;
+            border-top: 1px solid rgba(5, 114, 171, 0.4);
+            background-color: #000;
+        }
+
+        .sparkles {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            width: 100%;
+            -webkit-mask-image: radial-gradient(50% 50%, white, transparent 85%);
+            mask-image: radial-gradient(50% 50%, white, transparent 85%);
+        }
+
+        .particle {
+            position: absolute;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.8), rgba(66, 133, 244, 0.6), rgba(0, 212, 170, 0.6), rgba(255, 255, 255, 0.9));
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkle 3s infinite;
+            box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes sparkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0) rotate(0deg);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1) rotate(180deg);
+            }
+        }
+
+        .logo-cloud-float {
+            animation: logoCloudFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes logoCloudFloat {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Logo Cloud Responsive Styles */
+        @media (max-width: 768px) {
+            .logo-cloud-section {
+                padding: 2rem 0 4rem;
+            }
+
+            .logo-cloud-wrapper {
+                max-width: 90vw;
+            }
+
+            .logo-cloud-title {
+                font-size: clamp(1.25rem, 5vw, 1.5rem);
+                margin-bottom: 2rem;
+            }
+
+            .logos-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                margin-bottom: 1rem;
+                padding: 0;
+            }
+
+            .cloud-provider-icon {
+                max-height: 40px;
+                max-width: 100px;
+            }
+
+            .cloud-provider-icon.gcp-logo {
+                max-height: 80px !important;
+                max-width: 160px !important;
+                width: auto !important;
+            }
+
+            .sparkles-container {
+                margin-top: -4rem;
+                height: 20rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -643,6 +826,32 @@
                 <div class="status-badge">Currently in Development</div>
             </div>
         </div>
+        
+        <!-- Logo Cloud Section -->
+        <div class="logo-cloud-section">
+            <div class="logo-cloud-wrapper logo-cloud-float">
+                <div class="logo-cloud-title">
+                    <span class="highlight">Trusted by experts.</span>
+                    <br>
+                    <span>Used by the leaders.</span>
+                </div>
+
+                <div class="logos-grid">
+                    <!-- Microsoft Azure Logo -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Microsoft_Azure.svg" alt="Microsoft Azure" class="cloud-provider-icon azure-logo" title="Microsoft Azure">
+                    
+                    <!-- AWS Logo -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="Amazon Web Services" class="cloud-provider-icon aws-logo" title="Amazon Web Services">
+                    
+                    <!-- Google Cloud Platform Logo -->
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Google_Cloud_logo.svg" alt="Google Cloud Platform" class="cloud-provider-icon gcp-logo" title="Google Cloud Platform">
+                </div>
+            </div>
+
+            <div class="sparkles-container">
+                <div class="sparkles" id="sparkles"></div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -669,6 +878,14 @@
                 
                 // Update page title
                 document.title = 'Cloud DevOps AI Agent - Intelligent DevOps Automation';
+                
+                // Initialize logo cloud features
+                setTimeout(() => {
+                    initSparkles();
+                    addSparklesInteraction();
+                    addLogoCloudEffects();
+                    handleSparklesResize();
+                }, 100);
             } else {
                 // Show default content and hide hero section
                 document.getElementById('default-content').style.display = 'flex';
@@ -702,10 +919,144 @@
             });
         }
         
+        // Sparkles animation system for logo cloud
+        class SparklesSystem {
+            constructor(containerId, particleCount = 100) {
+                this.container = document.getElementById(containerId);
+                if (!this.container) return;
+                this.particles = [];
+                this.particleCount = particleCount;
+                this.init();
+            }
+
+            init() {
+                this.createParticles();
+                this.animate();
+            }
+
+            createParticles() {
+                for (let i = 0; i < this.particleCount; i++) {
+                    this.createParticle();
+                }
+            }
+
+            createParticle() {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Random size between 1-4px
+                const size = Math.random() * 3 + 1;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                // Random position
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                
+                // Random animation delay
+                particle.style.animationDelay = Math.random() * 3 + 's';
+                
+                // Random animation duration
+                particle.style.animationDuration = (Math.random() * 2 + 2) + 's';
+                
+                this.container.appendChild(particle);
+                this.particles.push({
+                    element: particle,
+                    x: Math.random() * window.innerWidth,
+                    y: Math.random() * window.innerHeight,
+                    vx: (Math.random() - 0.5) * 0.3,
+                    vy: (Math.random() - 0.5) * 0.3
+                });
+            }
+
+            animate() {
+                this.particles.forEach(particle => {
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    
+                    // Wrap around edges
+                    if (particle.x < 0) particle.x = window.innerWidth;
+                    if (particle.x > window.innerWidth) particle.x = 0;
+                    if (particle.y < 0) particle.y = window.innerHeight;
+                    if (particle.y > window.innerHeight) particle.y = 0;
+                    
+                    particle.element.style.transform = `translate(${particle.x}px, ${particle.y}px)`;
+                });
+                
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        // Initialize sparkles system
+        function initSparkles() {
+            const sparklesContainer = document.getElementById('sparkles');
+            if (sparklesContainer) {
+                new SparklesSystem('sparkles', 80);
+            }
+        }
+
+        // Add mouse interaction for sparkles
+        function addSparklesInteraction() {
+            const sparkles = document.getElementById('sparkles');
+            if (!sparkles) return;
+
+            document.addEventListener('mousemove', (e) => {
+                const rect = sparkles.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / rect.width) * 100;
+                const y = ((e.clientY - rect.top) / rect.height) * 100;
+                
+                sparkles.style.background = `radial-gradient(circle at ${x}% ${y}%, rgba(5, 114, 171, 0.1), transparent 50%)`;
+            });
+        }
+
+        // Add hover effects to logo cloud logos
+        function addLogoCloudEffects() {
+            document.querySelectorAll('.cloud-provider-icon').forEach(logo => {
+                // Set initial stable state to prevent flickering
+                logo.style.transform = 'scale(1)';
+                logo.style.filter = 'brightness(1)';
+                
+                logo.addEventListener('mouseenter', () => {
+                    logo.style.transform = 'scale(1.1)';
+                    logo.style.filter = 'brightness(1.3)';
+                    logo.style.opacity = '1';
+                });
+                
+                logo.addEventListener('mouseleave', () => {
+                    logo.style.transform = 'scale(1)';
+                    logo.style.filter = 'brightness(1)';
+                    logo.style.opacity = '0.8';
+                });
+            });
+        }
+
+        // Handle responsive sparkles
+        function handleSparklesResize() {
+            window.addEventListener('resize', () => {
+                // Recreate sparkles system on resize for better performance
+                const existingParticles = document.querySelectorAll('.particle');
+                existingParticles.forEach(p => p.remove());
+                
+                // Re-initialize with smaller particle count on mobile
+                const isMobile = window.innerWidth <= 768;
+                const particleCount = isMobile ? 50 : 80;
+                new SparklesSystem('sparkles', particleCount);
+            });
+        }
+
         // Run when page loads
         document.addEventListener('DOMContentLoaded', () => {
             checkSource();
             addScrollAnimations();
+            
+            // Initialize logo cloud features only when hero content is active
+            const heroContent = document.getElementById('hero-content');
+            if (heroContent && heroContent.classList.contains('active')) {
+                initSparkles();
+                addSparklesInteraction();
+                addLogoCloudEffects();
+                handleSparklesResize();
+            }
         });
     </script>
 </body>
