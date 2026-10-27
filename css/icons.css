@@ -1,0 +1,37 @@
+/*
+ * Icon font: subset of Flaticon UIcons "bold rounded".
+ * Only the glyphs below are included. To add an icon, look up its codepoint in
+ * the full font (fonts/uicons-bold-rounded-MQNABNC6.woff2) and regenerate:
+ *   pyftsubset fonts/uicons-bold-rounded-MQNABNC6.woff2 --flavor=woff2 \
+ *     --unicodes=<existing>,<new> --output-file=fonts/uicons-bold-rounded-subset.woff2
+ */
+@font-face {
+    font-family: uicons-bold-rounded;
+    src: url(../fonts/uicons-bold-rounded-subset.woff2) format("woff2");
+    font-display: block;
+}
+
+i[class^="fi-br-"]::before,
+i[class*=" fi-br-"]::before {
+    font-family: uicons-bold-rounded !important;
+    font-style: normal;
+    font-weight: 400 !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.fi-br-apps::before { content: "\f16c"; }
+.fi-br-bolt::before { content: "\f26c"; }
+.fi-br-boxes::before { content: "\f2b7"; }
+.fi-br-brain::before { content: "\f2de"; }
+.fi-br-building::before { content: "\f303"; }
+.fi-br-chart-line-up::before { content: "\f3a6"; }
+.fi-br-chart-mixed::before { content: "\f3a9"; }
+.fi-br-gears::before { content: "\f6f3"; }
+.fi-br-laptop-code::before { content: "\f873"; }
+.fi-br-leaf::before { content: "\f894"; }
+.fi-br-shield-keyhole::before { content: "\fbe5"; }
+.fi-br-stats::before { content: "\fcf0"; }

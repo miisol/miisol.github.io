@@ -4,22 +4,22 @@ class DesignCard {
         this.sections = [
             { 
                 text: "Discover", 
-                bgImage: "assets/images/discover.jpg",
+                bgImage: "assets/images/discover.webp",
                 color: "from-blue-600 to-blue-800"
             },
             { 
                 text: "Design", 
-                bgImage: "assets/images/design.jpg",
+                bgImage: "assets/images/design.webp",
                 color: "from-purple-600 to-purple-800"
             },
             { 
                 text: "Develop", 
-                bgImage: "assets/images/develop.jpg",
+                bgImage: "assets/images/develop.webp",
                 color: "from-green-600 to-green-800"
             },
             { 
                 text: "Deploy", 
-                bgImage: "assets/images/deploy.jpg",
+                bgImage: "assets/images/deploy.webp",
                 color: "from-orange-600 to-orange-800"
             }
         ];
