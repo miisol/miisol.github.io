@@ -1,7 +1,7 @@
 # GitHub Pages Configuration
 
 # Enable GitHub Pages
-url: "https://miisol.github.io"
+url: "https://miisol.net"
 baseurl: ""
 
 # Site settings
@@ -24,6 +24,7 @@ exclude:
 # Include files
 include:
   - _redirects
+  - .well-known
 
 # Plugin settings
 plugins:
@@ -31,17 +32,10 @@ plugins:
   - jekyll-seo-tag
 
 # SEO settings
-lang: en_US
+lang: en_GB
 logo: /assets/images/logo.svg
 
 # Social media
 twitter:
   username: miisol_ltd
   card: summary_large_image
-
-# Google Analytics (add your tracking ID)
-# google_analytics: UA-XXXXXXXX-X
-
-# Custom domain (uncomment and update if using custom domain)
-# url: "https://miisol.com"
-# enforce_ssl: miisol.com

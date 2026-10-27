@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; form-action https://formspree.io; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+    />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
     <title>
       Miisol Ltd - AI & API Technology Consulting and Solutions | UK-Based AI
       Experts
@@ -11,23 +16,8 @@
       name="description"
       content="Miisol Ltd delivers cutting-edge AI & API technology consulting and solutions, expert consulting services, and cloud-native platforms for modern enterprises. Transform your business with our UK-based AI technology specialists."
     />
-    <meta
-      name="keywords"
-      content="AI consulting, artificial intelligence solutions, API ecosystem, API development, API-led connectivity , DevOps, enterprise AI, machine learning consulting, UK AI experts, digital transformation"
-    />
     <meta name="author" content="Miisol Ltd" />
     <meta name="robots" content="index, follow" />
-    <meta name="googlebot" content="index, follow" />
-    <meta name="bingbot" content="index, follow" />
-
-    <!-- Additional SEO Meta Tags -->
-    <meta name="geo.region" content="GB" />
-    <meta name="geo.country" content="UK" />
-    <meta name="geo.position" content="51.509865;-0.118092" />
-    <meta name="ICBM" content="51.509865, -0.118092" />
-    <meta name="language" content="en-GB" />
-    <meta name="revisit-after" content="7 days" />
-    <meta name="rating" content="general" />
 
     <!-- Theme and Mobile Optimization -->
     <meta name="theme-color" content="#0572ab" />
@@ -36,12 +26,8 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
     <meta name="apple-mobile-web-app-title" content="Miisol Ltd" />
 
-    <!-- Preconnect for Performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://miisol.github.io/" />
+    <link rel="canonical" href="https://miisol.net/" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -53,27 +39,25 @@
       property="og:description"
       content="Transform your business with intelligent AI solutions. Expert consulting, agent development, and discovery platforms from UK-based AI specialists."
     />
-    <meta
-      property="og:image"
-      content="https://miisol.github.io/assets/images/color-logo-no-background.svg"
-    />
-    <meta property="og:url" content="https://miisol.github.io" />
+    <meta property="og:image" content="https://miisol.net/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Miisol Ltd - AI & Cloud-Native Solutions" />
+    <meta property="og:url" content="https://miisol.net/" />
     <meta property="og:site_name" content="Miisol Ltd" />
+    <meta property="og:locale" content="en_GB" />
 
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta
-      property="twitter:title"
+      name="twitter:title"
       content="Miisol Ltd - AI Technology Solutions & Consulting"
     />
     <meta
-      property="twitter:description"
+      name="twitter:description"
       content="Transform your business with intelligent AI solutions. Expert consulting, agent development, and discovery platforms from UK-based AI specialists."
     />
-    <meta
-      property="twitter:image"
-      content="https://miisol.github.io/assets/images/color-logo-no-background.svg"
-    />
+    <meta name="twitter:image" content="https://miisol.net/assets/images/og-image.jpg" />
 
     <!-- Structured Data for SEO -->
     <script type="application/ld+json">
@@ -82,19 +66,24 @@
         "@type": "Organization",
         "name": "Miisol Ltd",
         "alternateName": "Miisol",
-        "url": "https://miisol.github.io",
-        "logo": "https://miisol.github.io/assets/images/color-logo-no-background.svg",
+        "url": "https://miisol.net",
+        "logo": "https://miisol.net/assets/images/color-logo-no-background.svg",
         "description": "UK-based AI technology consulting company specialising in artificial intelligence solutions, cloud-native development, and enterprise digital transformation.",
-        "foundingDate": "2024",
+        "legalName": "MIISOL LTD",
+        "vatID": "GB209697177",
+        "foundingDate": "2015-03-16",
         "address": {
           "@type": "PostalAddress",
-          "addressCountry": "GB",
-          "addressRegion": "England"
+          "streetAddress": "Flat 5, 49 Clarence Avenue",
+          "addressLocality": "Ilford",
+          "postalCode": "IG2 6FB",
+          "addressRegion": "England",
+          "addressCountry": "GB"
         },
         "contactPoint": {
           "@type": "ContactPoint",
           "contactType": "Business Enquiries",
-          "url": "https://miisol.github.io#contact"
+          "url": "https://miisol.net#contact"
         },
         "sameAs": ["https://github.com/miisol"],
         "areaServed": {
@@ -114,21 +103,20 @@
       }
     </script>
 
+    <link rel="preload" href="fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="css/fonts.css" />
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/all.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="css/icons.css" />
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="assets/images/miisol-favicon.svg" />
     <link rel="icon" type="image/svg+xml" sizes="32x32" href="assets/images/favicon-32x32.svg" />
     <link rel="apple-touch-icon" href="assets/images/miisol-favicon.svg" />
     <link rel="shortcut icon" href="assets/images/miisol-favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="manifest.json" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/vendor/gsap.min.js" defer></script>
   </head>
   <body>
+    <a class="skip-link" href="#home">Skip to main content</a>
     <div class="container">
       <div class="bg-gradient"></div>
 
@@ -136,7 +124,7 @@
       <nav class="nav">
         <div class="nav-content">
           <div class="nav-logo">
-            <a href="#" onclick="window.location.reload(); return false;" style="cursor: pointer;">
+            <a href="./" aria-label="Miisol home">
               <img
                 src="assets/images/color-logo-no-background.svg"
                 alt="Miisol Logo"
@@ -184,7 +172,7 @@
       </div>
 
       <!-- Main Content -->
-      <main class="main-content" id="home">
+      <main class="main-content" id="home" tabindex="-1">
         <div class="hero-section">
           <div class="hero-left">
             <h1 class="hero-title">
@@ -224,6 +212,10 @@
                 </svg>
               </a>
             </div>
+
+            <button type="button" class="card-swap-toggle" id="cardSwapToggle" aria-pressed="false" aria-controls="cardSwapContainer">
+              Pause animation
+            </button>
           </div>
 
           <div class="hero-right">
@@ -246,7 +238,7 @@
                         ></path>
                       </svg>
                     </div>
-                    <h3>AI & Machine Learning</h3>
+                    <h2>AI & Machine Learning</h2>
                   </div>
                   <p>
                     Intelligent automation and predictive analytics powered by
@@ -282,7 +274,7 @@
                         />
                       </svg>
                     </div>
-                    <h3>Cloud-Native Systems</h3>
+                    <h2>Cloud-Native Systems</h2>
                   </div>
                   <p>
                     Scalable cloud infrastructure with microservices and
@@ -317,7 +309,7 @@
                         <path d="m9 12 2 2 4-4" />
                       </svg>
                     </div>
-                    <h3>DevOps & SecOps</h3>
+                    <h2>DevOps & SecOps</h2>
                   </div>
                   <p>
                     Secure development with automated CI/CD pipelines and
@@ -351,7 +343,7 @@
                         />
                       </svg>
                     </div>
-                    <h3>Modern Development</h3>
+                    <h2>Modern Development</h2>
                   </div>
                   <p>
                     Full-stack development with latest frameworks and
@@ -384,7 +376,7 @@
                         />
                       </svg>
                     </div>
-                    <h3>Green IT & Sustainability</h3>
+                    <h2>Green IT & Sustainability</h2>
                   </div>
                   <p>
                     Sustainable technology solutions and carbon-efficient
@@ -463,12 +455,12 @@
 
           <div class="stats-grid">
             <div class="web-section">
-              <h3>99.9%</h3>
-              <p>Project Success Rate</p>
+              <p class="stat-number">2015</p>
+              <p>Established</p>
             </div>
 
             <div class="projects-card">
-              <div class="projects-number">50+</div>
+              <div class="projects-number">10+</div>
               <div class="projects-label">Technology Projects Delivered</div>
               <div class="toggle-switch">
                 <div class="toggle-option active">Delivered</div>
@@ -477,18 +469,18 @@
             </div>
 
             <div class="stat-item">
-              <div class="stat-icon"><i class="fi fi-br-clock"></i></div>
+              <div class="stat-icon" aria-hidden="true"><i class="fi fi-br-apps"></i></div>
               <div class="stat-content">
-                <h4>50+</h4>
-                <p>Enterprise Clients</p>
+                <p class="stat-number">6</p>
+                <p>Core Service Areas</p>
               </div>
             </div>
 
             <div class="stat-item">
-              <div class="stat-icon"><i class="fi fi-br-laptop"></i></div>
+              <div class="stat-icon" aria-hidden="true"><i class="fi fi-br-building"></i></div>
               <div class="stat-content">
-                <h4>1M+</h4>
-                <p>Coding Hours</p>
+                <p class="stat-number">UK</p>
+                <p>Registered in England &amp; Wales</p>
               </div>
             </div>
           </div>
@@ -552,8 +544,8 @@
       </section>
 
       <!-- Technology Solutions Section -->
-      <section class="tech-solutions-section">
-        <h1 class="fluid">Comprehensive Technology Solutions</h1>
+      <section class="tech-solutions-section" id="solutions">
+        <h2 class="fluid">Comprehensive Technology Solutions</h2>
         <p class="pyramid-text">
           <span class="line line-1"
             >Transforming businesses through strategic technology
@@ -1125,7 +1117,7 @@
         <!-- Main Header -->
         <div class="products-header">
           <div class="section-tag">AI Products</div>
-          <h1 class="products-title">AI-Powered Solutions</h1>
+          <h2 class="products-title">AI-Powered Solutions</h2>
           <p class="products-subtitle">
             Discover and deploy cutting-edge AI solutions for your business transformation
           </p>
@@ -1390,7 +1382,7 @@
                       <div class="agent-feature-content">
                         <div class="agent-feature-inner">
                           <div class="agent-icon-container">
-                            <img class="agent-icon" src="https://unpkg.com/lucide-static@latest/icons/server-cog.svg" alt="Infrastructure as Code icon" style="filter: brightness(0) invert(1);" />
+                            <img class="agent-icon" src="assets/images/icons/server-cog.svg" alt="Infrastructure as Code icon" style="filter: brightness(0) invert(1);" />
                           </div>
                           <h4 class="agent-feature-title">Infrastructure as Code</h4>
                           <p class="agent-feature-description">
@@ -1468,7 +1460,7 @@
                       <div class="agent-feature-content">
                         <div class="agent-feature-inner">
                           <div class="agent-icon-container">
-                            <img class="agent-icon" src="https://unpkg.com/lucide-static@latest/icons/landmark.svg" alt="Advanced Architecture icon" style="filter: brightness(0) invert(1);" />
+                            <img class="agent-icon" src="assets/images/icons/landmark.svg" alt="Advanced Architecture icon" style="filter: brightness(0) invert(1);" />
                           </div>
                           <h4 class="agent-feature-title">Advanced Architecture</h4>
                           <p class="agent-feature-description">
@@ -1518,70 +1510,6 @@
       <section class="azure-agent-section-hidden" id="cloud-devops-agent" style="display: none;">
         <!-- This section is hidden and content moved to tabs above -->
         <!-- Navigation handled by main script.js -->
-      </section>
-
-      <!-- Testimonials Section -->
-      <section class="testimonials-section">
-        <div class="section-tag">Client Success Stories</div>
-
-        <h2 class="section-title">
-          Trusted by leading organisations for technology transformation
-        </h2>
-
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <p class="testimonial-text">
-                "Miisol's cloud-native transformation strategy transformed our
-                entire infrastructure. We achieved 99.9% uptime and reduced
-                deployment times from hours to minutes with their expert
-                guidance."
-              </p>
-              <div class="testimonial-author">
-                <div class="author-info">
-                  <h4 class="author-name">Sarah Johnson</h4>
-                  <p class="author-title">CTO, TechCorp Solutions</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <p class="testimonial-text">
-                "The AI solutions implemented by Miisol revolutionised our
-                operations. Their strategic approach and technical expertise
-                delivered 40% efficiency improvements."
-              </p>
-              <div class="testimonial-author">
-                <div class="author-info">
-                  <h4 class="author-name">Michael Chen</h4>
-                  <p class="author-title">
-                    Head of Innovation, GlobalFinance Ltd
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="testimonial-card">
-            <div class="testimonial-content">
-              <p class="testimonial-text">
-                "Working with Miisol on our DevSecOps transformation was
-                exceptional. Their security-first approach and automated
-                pipelines gave us confidence to deploy daily."
-              </p>
-              <div class="testimonial-author">
-                <div class="author-info">
-                  <h4 class="author-name">Emma Thompson</h4>
-                  <p class="author-title">
-                    Head of Security, DataTech Industries
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </section>
 
       <!-- Contact Us Section -->
@@ -1670,17 +1598,17 @@
             >
               <div class="form-group">
                 <label for="fullName">Full Name *</label>
-                <input type="text" id="fullName" name="fullName" required />
+                <input type="text" id="fullName" name="fullName" autocomplete="name" required />
               </div>
 
               <div class="form-group">
                 <label for="email">Email Address *</label>
-                <input type="email" id="email" name="email" required />
+                <input type="email" id="email" name="email" autocomplete="email" required />
               </div>
 
               <div class="form-group">
                 <label for="company">Company/Organisation</label>
-                <input type="text" id="company" name="company" />
+                <input type="text" id="company" name="company" autocomplete="organization" />
               </div>
 
               <div class="form-group">
@@ -1693,6 +1621,16 @@
                   required
                 ></textarea>
               </div>
+
+              <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+
+              <p class="form-privacy-notice">
+                Fields marked * are required. We use these details only to
+                respond to your enquiry. Submissions are processed by our form
+                provider, Formspree. See our
+                <a href="privacy.html">Privacy Policy</a> for how we handle and
+                retain your data and your rights.
+              </p>
 
               <button type="submit" class="submit-btn">
                 <span>Send Message</span>
@@ -1708,7 +1646,7 @@
           <div class="footer-main">
             <div class="footer-brand">
               <div class="footer-logo">
-                <a href="#" onclick="window.scrollTo(0, 0); return false;" style="cursor: pointer;">
+                <a href="#home" aria-label="Back to top">
                   <img
                     src="assets/images/white-logo-no-background.svg"
                     alt="Miisol Logo"
@@ -1744,48 +1682,23 @@
                 <h4>Expertise</h4>
                 <ul>
                   <li>
-                    <a
-                      href="#ai-ml"
-                      class="disabled-link"
-                      aria-disabled="true"
-                      tabindex="-1"
-                      >AI & Machine Learning</a
+                    <a href="#solutions">AI & Machine Learning</a
                     >
                   </li>
                   <li>
-                    <a
-                      href="#cloud-architecture"
-                      class="disabled-link"
-                      aria-disabled="true"
-                      tabindex="-1"
-                      >Cloud-Native Architecture</a
+                    <a href="#solutions">Cloud-Native Architecture</a
                     >
                   </li>
                   <li>
-                    <a
-                      href="#devsecops"
-                      class="disabled-link"
-                      aria-disabled="true"
-                      tabindex="-1"
-                      >DevSecOps Implementation</a
+                    <a href="#solutions">DevSecOps Implementation</a
                     >
                   </li>
                   <li>
-                    <a
-                      href="#digital-transformation"
-                      class="disabled-link"
-                      aria-disabled="true"
-                      tabindex="-1"
-                      >Digital Transformation</a
+                    <a href="#solutions">Digital Transformation</a
                     >
                   </li>
                   <li>
-                    <a
-                      href="#tech-leadership"
-                      class="disabled-link"
-                      aria-disabled="true"
-                      tabindex="-1"
-                      >Technical Leadership</a
+                    <a href="#solutions">Technical Leadership</a
                     >
                   </li>
                 </ul>
@@ -1795,30 +1708,25 @@
 
           <div class="footer-bottom">
             <div class="footer-legal">
-              <span>&copy; 2024 Miisol Ltd. All rights reserved.</span>
-              <div class="legal-links">
-                <a
-                  href="#privacy"
-                  class="disabled-link"
-                  aria-disabled="true"
-                  tabindex="-1"
-                  >Privacy Policy</a
-                >
-                <a
-                  href="#terms"
-                  class="disabled-link"
-                  aria-disabled="true"
-                  tabindex="-1"
-                  >Terms of Service</a
-                >
-              </div>
+              <span>&copy; 2026 Miisol Ltd. All rights reserved.</span>
+              <nav class="legal-links" aria-label="Legal">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="cookies.html">Cookie Policy</a>
+                <a href="accessibility.html">Accessibility</a>
+              </nav>
             </div>
+            <p class="footer-company-info">
+              Miisol Ltd is a private limited company registered in England and
+              Wales, company number 09492101. Registered office: Flat 5, 49
+              Clarence Avenue, Ilford, England, IG2 6FB. VAT registration
+              number: GB 209 6971 77.
+            </p>
           </div>
         </div>
       </footer>
     </div>
 
-    <script src="js/script.js"></script>
-    <script src="js/design-card.js"></script>
+    <script src="js/script.js" defer></script>
+    <script src="js/design-card.js" defer></script>
   </body>
 </html>

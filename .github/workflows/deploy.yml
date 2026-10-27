@@ -3,37 +3,29 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
-  pull_request:
-    branches: [main]
+
+# The token can only push the built site to the gh-pages branch
+permissions:
+  contents: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
 
     steps:
+      # Actions are pinned to commit SHAs so a moved tag cannot change what runs
       - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          node-version: "18"
-
-      - name: Install dependencies (if any)
-        run: |
-          if [ -f package.json ]; then
-            npm ci
-          fi
-
-      - name: Build (if needed)
-        run: |
-          # Add any build steps here if needed
-          echo "No build steps required for static site"
+          persist-credentials: false
 
       - name: Deploy to GitHub Pages
-        if: github.ref == 'refs/heads/main'
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./
-          exclude_assets: ".github,README.md,.gitignore,_config.yml"
+          exclude_assets: ".github,.vscode,README.md,.gitignore,_config.yml"
