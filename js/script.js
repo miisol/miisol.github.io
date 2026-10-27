@@ -881,7 +881,7 @@ class CardSwap {
         this.order = Array.from({ length: this.cards.length }, (_, i) => i);
         this.timeline = null;
         this.interval = null;
-        this.isPaused = false;
+        this.isPaused = Boolean(this.options.startPaused);
 
         this.init();
     }
@@ -981,41 +981,44 @@ class CardSwap {
     }
 
     startAnimation() {
+        if (this.isPaused) return;
+
         // Initial swap
-        setTimeout(() => this.swap(), 1000);
-        
+        this.startTimeout = setTimeout(() => this.swap(), 1000);
+
         // Set up interval
         this.interval = setInterval(() => {
             this.swap();
         }, this.options.delay);
     }
 
+    pause() {
+        this.isPaused = true;
+        if (this.timeline) {
+            this.timeline.pause();
+        }
+        clearTimeout(this.startTimeout);
+        clearInterval(this.interval);
+    }
+
+    resume() {
+        this.isPaused = false;
+        if (this.timeline) {
+            this.timeline.play();
+        }
+        clearInterval(this.interval);
+        this.interval = setInterval(() => {
+            this.swap();
+        }, this.options.delay);
+    }
+
     setupHoverEvents() {
-        const pauseAnimation = () => {
-            this.isPaused = true;
-            if (this.timeline) {
-                this.timeline.pause();
-            }
-            if (this.interval) {
-                clearInterval(this.interval);
-            }
-        };
-
-        const resumeAnimation = () => {
-            this.isPaused = false;
-            if (this.timeline) {
-                this.timeline.play();
-            }
-            this.interval = setInterval(() => {
-                this.swap();
-            }, this.options.delay);
-        };
-
-        this.container.addEventListener('mouseenter', pauseAnimation);
-        this.container.addEventListener('mouseleave', resumeAnimation);
+        this.container.addEventListener('mouseenter', () => this.pause());
+        this.container.addEventListener('mouseleave', () => this.resume());
     }
 
     destroy() {
+        clearTimeout(this.startTimeout);
         if (this.interval) {
             clearInterval(this.interval);
         }
@@ -1030,46 +1033,84 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize CardSwap if container exists
     const cardSwapContainer = document.getElementById('cardSwapContainer');
     if (cardSwapContainer) {
-        // Get responsive values based on screen size
-        const isMobile = window.innerWidth <= 480;
-        const isTablet = window.innerWidth <= 768;
-        
-        let width, height, cardDistance, verticalDistance;
-        
-        if (isMobile) {
-            width = Math.min(window.innerWidth * 0.82, 240);
-            height = width * 1.33; // 3:4 aspect ratio (shorter)
-            cardDistance = 30;
-            verticalDistance = 35;
-        } else if (isTablet) {
-            width = Math.min(window.innerWidth * 0.85, 280);
-            height = width * 1.25; // 4:5 aspect ratio (shorter)
-            cardDistance = 40;
-            verticalDistance = 45;
-        } else {
-            width = 450;
-            height = 350;
-            cardDistance = 60;
-            verticalDistance = 70;
-        }
-        
-        const cardSwapInstance = new CardSwap('cardSwapContainer', {
-            width: width,
-            height: height,
-            cardDistance: cardDistance,
-            verticalDistance: verticalDistance,
-            delay: 5000,
-            pauseOnHover: false,
-            skewAmount: isMobile ? 3 : 6,
-            easing: 'elastic'
-        });
+        const toggleButton = document.getElementById('cardSwapToggle');
+        const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        let paused = reducedMotion.matches;
 
-        // Handle window resize for responsive behavior
+        const getBreakpoint = () => {
+            if (window.innerWidth <= 480) return 'mobile';
+            if (window.innerWidth <= 768) return 'tablet';
+            return 'desktop';
+        };
+
+        const createCardSwap = (breakpoint) => {
+            let width, height, cardDistance, verticalDistance;
+
+            if (breakpoint === 'mobile') {
+                width = Math.min(window.innerWidth * 0.82, 240);
+                height = width * 1.33; // 3:4 aspect ratio (shorter)
+                cardDistance = 30;
+                verticalDistance = 35;
+            } else if (breakpoint === 'tablet') {
+                width = Math.min(window.innerWidth * 0.85, 280);
+                height = width * 1.25; // 4:5 aspect ratio (shorter)
+                cardDistance = 40;
+                verticalDistance = 45;
+            } else {
+                width = 450;
+                height = 350;
+                cardDistance = 60;
+                verticalDistance = 70;
+            }
+
+            return new CardSwap('cardSwapContainer', {
+                width: width,
+                height: height,
+                cardDistance: cardDistance,
+                verticalDistance: verticalDistance,
+                delay: 5000,
+                pauseOnHover: false,
+                skewAmount: breakpoint === 'mobile' ? 3 : 6,
+                easing: 'elastic',
+                startPaused: paused
+            });
+        };
+
+        let breakpoint = getBreakpoint();
+        let cardSwapInstance = createCardSwap(breakpoint);
+
+        // Pause/play control so users can stop the auto-rotation (WCAG 2.2.2)
+        const updateToggle = () => {
+            if (!toggleButton) return;
+            toggleButton.setAttribute('aria-pressed', String(paused));
+            toggleButton.textContent = paused ? 'Play animation' : 'Pause animation';
+        };
+
+        if (toggleButton) {
+            toggleButton.addEventListener('click', () => {
+                paused = !paused;
+                if (paused) {
+                    cardSwapInstance.pause();
+                } else {
+                    cardSwapInstance.resume();
+                }
+                updateToggle();
+            });
+        }
+        updateToggle();
+
+        // Rebuild only when the breakpoint changes. Mobile browsers fire resize
+        // when the address bar shows or hides, so reacting to every resize
+        // would restart the animation while the user scrolls.
         let resizeTimer;
         window.addEventListener('resize', function() {
             clearTimeout(resizeTimer);
             resizeTimer = setTimeout(function() {
-                location.reload(); // Simple solution: reload on resize for proper recalculation
+                const nextBreakpoint = getBreakpoint();
+                if (nextBreakpoint === breakpoint) return;
+                breakpoint = nextBreakpoint;
+                cardSwapInstance.destroy();
+                cardSwapInstance = createCardSwap(breakpoint);
             }, 250);
         });
     }

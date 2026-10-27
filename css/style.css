@@ -719,7 +719,7 @@ body {
 .base-background {
     position: absolute;
     inset: 0;
-    background-image: url('../assets/images/discover.jpg');
+    background-image: url('../assets/images/discover.webp');
     background-size: cover;
     background-position: center;
     opacity: 0.9;
@@ -924,10 +924,11 @@ body {
     text-align: center;
 }
 
-.web-section h3 {
+.web-section .stat-number {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 3rem; /* match projects-number */
     font-weight: 700; /* match projects-number */
+    line-height: 1.2;
     margin-bottom: 8px; /* match spacing with projects-number */
     color: var(--text-primary);
 }
@@ -1076,7 +1077,7 @@ body {
     color: white;
 }
 
-.stat-content h4 {
+.stat-content .stat-number {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
@@ -1265,7 +1266,7 @@ body {
     padding-inline: 20px;
 }
 
-.tech-solutions-section h1.fluid {
+.tech-solutions-section h2.fluid {
     --font-size-min: 22;
     --font-level: 4.25;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -1613,7 +1614,7 @@ body {
     .tech-solutions-section {
         padding: 60px 40px;
     }
-    .tech-solutions-section h1.fluid {
+    .tech-solutions-section h2.fluid {
         font-size: 36px;
     }
     .tech-solutions-section ul {
@@ -1850,14 +1851,14 @@ body {
         font-size: 2.5rem;
     }
 
-    .stat-content h4 {
+    .stat-content .stat-number {
         font-size: 2rem;
     }
 
     .tech-solutions-section {
         padding: 40px 20px;
     }
-    .tech-solutions-section h1.fluid {
+    .tech-solutions-section h2.fluid {
         font-size: 32px;
     }
     .tech-solutions-section > p {
@@ -4473,6 +4474,25 @@ a.agent-access-btn:hover .button-text {
     color: var(--primary-color);
 }
 
+.footer-company-info {
+    color: var(--text-light);
+    font-size: 13px;
+    line-height: 1.6;
+    margin-top: 20px;
+}
+
+/* Privacy notice shown at the point of data collection */
+.form-privacy-notice {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.form-privacy-notice a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .testimonials-grid {
@@ -4594,7 +4614,7 @@ a.agent-access-btn:hover .button-text {
     height: 24px;
 }
 
-.card-header h3 {
+.card-header h2 {
     font-size: 1.25rem;
     font-weight: 600;
     color: var(--text-primary);
@@ -4651,7 +4671,7 @@ a.agent-access-btn:hover .button-text {
         padding: 1.2rem;
     }
     
-    .card-header h3 {
+    .card-header h2 {
         font-size: 1rem;
     }
     
@@ -4677,7 +4697,7 @@ a.agent-access-btn:hover .button-text {
         padding: 30px 15px;
     }
     
-    .tech-solutions-section h1.fluid {
+    .tech-solutions-section h2.fluid {
         font-size: 28px;
         margin-bottom: 20px;
     }
@@ -4874,7 +4894,7 @@ a.agent-access-btn:hover .button-text {
         width: 20px;
     }
     
-    .card-header h3 {
+    .card-header h2 {
         font-size: 0.95rem;
     }
     
@@ -5428,4 +5448,75 @@ button.learn-more .circle .icon.arrow::before {
 
 .ai-products-section .agent-access-btn:hover .button-text {
     color: #fff;
+}
+/* ===== Accessibility ===== */
+
+/* Skip link: hidden until focused by keyboard */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    z-index: 10000;
+    padding: 12px 20px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.skip-link:focus {
+    top: 16px;
+}
+
+main:focus {
+    outline: none;
+}
+
+/* Pause/play control for the rotating hero cards */
+.card-swap-toggle {
+    position: relative;
+    z-index: 20;
+    display: block;
+    margin: 2rem auto 0;
+    padding: 8px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    background: var(--white);
+    color: var(--text-primary);
+    font: inherit;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.card-swap-toggle:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.card-swap-toggle:focus-visible,
+.skip-link:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+/* Spam trap for Formspree; hidden from people and assistive tech */
+.form-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+/* Respect the user's reduced motion setting */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }
