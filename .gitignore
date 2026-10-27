@@ -30,6 +30,8 @@ dist/
 build/
 *.min.css
 *.min.js
+# Vendored libraries are served as-is
+!js/vendor/*.min.js
 
 # Temporary files
 .tmp/
